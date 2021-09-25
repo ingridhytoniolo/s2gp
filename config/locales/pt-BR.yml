@@ -31,6 +31,8 @@ pt-BR:
           attributes:
             confirmation_token:
               blank: não informado
+            email:
+              taken: já cadastrado
             password:
               too_short: é muito curta
             password_confirmation:
