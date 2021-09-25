@@ -16,6 +16,13 @@ pt-BR:
       timeout: A sua sessão expirou, por favor, faça login novamente para continuar.
       unauthenticated: ''
       unconfirmed: Antes de continuar, confirme a sua conta.
+    links:
+      new_confirmation: Não recebeu o email de confirmação?
+      new_password: Esqueceu a senha?
+      new_registration: Não possui uma conta?
+      new_session: Já possui uma conta?
+      new_unlock: Não recebeu instruções para desbloqueio?
+      omniauth_authorize: Entrar com
     mailer:
       confirmation_instructions:
         action: Confirmar minha conta
@@ -105,6 +112,12 @@ pt-BR:
       send_instructions: Dentro de minutos, você receberá um e-mail com instruções de desbloqueio da sua conta.
       send_paranoid_instructions: Se sua conta existir em nosso banco de dados, você receberá em breve um e-mail com instruções para desbloquear ela.
       unlocked: A sua conta foi desbloqueada com sucesso. Efetue login para continuar.
+    views:
+      sessions:
+        new:
+          sub_title: entre na sua conta
+          submit: Enviar
+          title: Olá,
   errors:
     messages:
       already_confirmed: já foi confirmado
