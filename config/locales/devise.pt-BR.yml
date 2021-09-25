@@ -113,6 +113,21 @@ pt-BR:
       send_paranoid_instructions: Se sua conta existir em nosso banco de dados, você receberá em breve um e-mail com instruções para desbloquear ela.
       unlocked: A sua conta foi desbloqueada com sucesso. Efetue login para continuar.
     views:
+      confirmations:
+        new:
+          sub_title: confirme a sua conta
+          submit: Solicitar e-mail de confirmação
+          title: Olá,
+      passwords:
+        new:
+          sub_title: esqueceu a senha?
+          submit: Solicitar nova senha
+          title: Olá,
+      registrations:
+        new:
+          sub_title: faça o seu cadastro
+          submit: Cadastrar
+          title: Olá,
       sessions:
         new:
           sub_title: entre na sua conta

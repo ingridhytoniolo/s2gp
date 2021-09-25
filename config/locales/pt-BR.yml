@@ -29,6 +29,8 @@ pt-BR:
       models:
         user:
           attributes:
+            confirmation_token:
+              blank: não informado
             password:
               too_short: é muito curta
             password_confirmation:

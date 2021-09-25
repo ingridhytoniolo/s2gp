@@ -1,3 +1,42 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+a {
+  @apply text-gray-500;
+}
+a:focus,
+a:hover {
+  @apply outline-none text-black;
+}
+
+button {
+  @apply py-3 mt-4 font-medium tracking-widest uppercase bg-gray-100 rounded;
+}
+button.primary {
+  @apply text-white bg-gray-900;
+}
+button:focus,
+button:hover {
+  @apply outline-none bg-gray-200;
+}
+button.primary:focus,
+button.primary:hover {
+  @apply bg-gray-800;
+}
+
+input[type=email],
+input[type=password],
+input[type=text] {
+  @apply block w-full p-3 mt-1 text-gray-700 bg-gray-50 border-2 border-gray-300 rounded;
+}
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=text]:focus {
+  box-shadow: none;
+  @apply border-gray-600;
+}
+
+label {
+  @apply block mt-3 text-xs text-gray-600 font-semibold uppercase;
+}

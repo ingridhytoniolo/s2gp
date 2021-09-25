@@ -1,26 +1,26 @@
 <%- if controller_name != 'sessions' %>
-  <p class="flex justify-center inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black">
+  <p class="flex justify-center inline-block mt-4 text-xs">
     <%= link_to I18n.t('devise.links.new_session'), new_session_path(resource_name) %>
   </p>
 <% end %>
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <p class="flex justify-center inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black">
+  <p class="flex justify-center inline-block mt-4 text-xs">
     <%= link_to I18n.t('devise.links.new_registration'), new_registration_path(resource_name) %>
   </p>
 <% end %>
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <p class="flex justify-center inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black">
+  <p class="flex justify-center inline-block mt-4 text-xs">
     <%= link_to I18n.t('devise.links.new_confirmation'), new_confirmation_path(resource_name) %>
   </p>
 <% end %>
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <p class="flex justify-center inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black">
+  <p class="flex justify-center inline-block mt-4 text-xs">
     <%= link_to I18n.t('devise.links.new_unlock'), new_unlock_path(resource_name) %>
   </p>
 <% end %>
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <p class="flex justify-center inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black">
+    <p class="flex justify-center inline-block mt-4 text-xs">
       <%= link_to "I18n.t('devise.links.omniauth_authorize') #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %>
     </p>
   <% end %>
