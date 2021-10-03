@@ -14,6 +14,13 @@ services:
     volumes:
       - .:/s2gp
     ports:
-      - "3000:3000"
+      - 3000:3000
     depends_on:
       - db
+    stdin_open: true
+    tty: true
+  mailcatcher:
+    image: zolweb/docker-mailcatcher:latest
+    ports:
+    - 1025:1025 
+    - 1080:1080
