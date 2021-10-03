@@ -89,11 +89,12 @@ pt-BR:
       updated: A sua conta foi atualizada com sucesso.
       updated_but_not_signed_in: Sua conta foi atualizada com sucesso, uma vez que sua senha foi alterada será necessário realizar o login novamente.
     sessions:
-      already_signed_out: Logout efetuado com sucesso.
+      already_signed_out: ''
       new:
-        sign_in: Login
+        sign_in: Entrar
+        sign_out: Sair
       signed_in: ''
-      signed_out: 'Logout efetuado com sucesso.'
+      signed_out: ''
     shared:
       links:
         back: Voltar
