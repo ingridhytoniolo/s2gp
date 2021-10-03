@@ -28,7 +28,9 @@
           </p>
         <% end %>
         <div class="actions">
-          <%= f.button I18n.t('devise.views.sessions.new.submit'), type: :submit, class: 'primary w-full' %>
+          <%= f.button I18n.t('devise.views.sessions.new.submit'), type: :submit, class: 'primary w-full',
+            data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>
+' } %>
         </div>
       <% end %>
       <%= render 'devise/shared/links' %>

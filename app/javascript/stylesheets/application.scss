@@ -24,6 +24,9 @@ button.primary:focus,
 button.primary:hover {
   @apply bg-gray-800;
 }
+button.primary:disabled {
+  @apply bg-gray-600;
+}
 
 input[type=email],
 input[type=password],
