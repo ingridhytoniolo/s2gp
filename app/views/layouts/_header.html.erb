@@ -47,8 +47,8 @@
 </header>
 <div class="mobile-menu hidden fixed z-10 inset-0 overflow-y-auto">
   <div class="flex h-screen">
-    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-    <div class="w-80 bg-white p-4 overflow-hidden shadow-xl transform transition-all">
+    <div class="background fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+    <div class="w-80 bg-white p-4 overflow-hidden shadow-xl transform">
       <div class="grid grid-cols-2 items-center">
         <span class="text-black text-xl font-semibold">S2GP</span>
         <button class="appearance-none close-mobile-menu justify-self-end">
@@ -57,7 +57,7 @@
           </svg>
         </button>
       </div>
-      <nav class="flex flex-col pt-4">
+      <nav class="nav flex flex-col pt-4">
         <% menu.each do |i| %>
           <%= link_to i[:name], i[:url], class: 'mb-4 hover:text-gray-900' %>
         <% end %>
@@ -69,11 +69,19 @@
   var btnOpen = document.querySelector(".open-mobile-menu");
   var btnClose = document.querySelector(".close-mobile-menu");
   var menu = document.querySelector(".mobile-menu");
+  var background = document.querySelector(".background");
+  var nav = document.querySelector(".nav");
   
+  background.addEventListener("click", () => {
+    menu.classList.add("hidden");
+  })
+  nav.addEventListener("click", () => {
+    menu.classList.add("hidden");
+  })
   btnOpen.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+    menu.classList.remove("hidden");
   });
   btnClose.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+    menu.classList.add("hidden");
   });
 </script>
