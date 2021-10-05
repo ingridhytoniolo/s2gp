@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   
   devise_for :users
 
+  get '/contact', to: 'pages#contact'
   get '/team', to: 'pages#team'
 end

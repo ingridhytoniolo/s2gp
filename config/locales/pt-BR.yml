@@ -39,7 +39,16 @@ pt-BR:
               confirmation: não é igual a senha
     models:
       user: Usuário
+  helpers:
+    labels:
+      email: E-mail
+      name: Nome
+      message: Mensagem
   pages:
+    contact:
+      sub_title: Fale conosco
+      submit: Enviar mensagem
+      title: Contato
     team: 
       sub_title: Pesquisadores, colaboradores e alunos
       title: Equipe
