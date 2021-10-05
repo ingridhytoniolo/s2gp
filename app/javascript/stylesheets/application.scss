@@ -10,6 +10,10 @@ a:hover {
   @apply outline-none text-black;
 }
 
+h1 {
+  @apply text-2xl text-gray-800 font-medium;
+}
+
 button.primary {
   @apply py-3 mt-4 font-medium tracking-widest uppercase rounded text-white bg-gray-900;
 }

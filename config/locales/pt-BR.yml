@@ -39,3 +39,5 @@ pt-BR:
               confirmation: não é igual a senha
     models:
       user: Usuário
+  pages:
+    team: Equipe
