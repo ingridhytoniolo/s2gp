@@ -11,7 +11,10 @@ a:hover {
 }
 
 h1 {
-  @apply text-2xl text-gray-800 font-medium;
+  @apply text-3xl text-gray-800 font-medium;
+}
+h2 {
+  @apply text-xl text-gray-400 font-medium;
 }
 
 button.primary {

@@ -1,4 +1,4 @@
-<header class="text-gray-600 body-font">
+<header class="text-gray-600 body-font shadow-sm">
   <div class="container mx-auto flex flex-wrap flex-row p-4 items-center">
     <div class="flex flex-wrap w-1/4 md:w-2/5">
       <nav class="flex md:hidden flex-wrap items-center">
@@ -7,7 +7,7 @@
         </button>
       </nav>
       <nav class="hidden md:flex flex-wrap text-base items-center justify-start">
-        <%= link_to I18n.t('pages.team'), team_path, class: 'mr-5 hover:text-gray-900' %>
+        <%= link_to I18n.t('pages.team.title'), team_path, class: 'mr-5 hover:text-gray-900' %>
       </nav>
     </div>
     <div class="flex flex-wrap w-1/2 md:w-1/5 items-center justify-center">
@@ -45,15 +45,15 @@
         </button>
       </div>
       <nav class="flex flex-col pt-4">
-        <%= link_to I18n.t('pages.team'), team_path, class: 'mb-4 hover:text-gray-900' %>
+        <%= link_to I18n.t('pages.team.title'), team_path, class: 'mb-4 hover:text-gray-900' %>
       </nav>
     </div>
   </div>
 </div>
 <script>
-  const btnOpen = document.querySelector(".open-mobile-menu");
-  const btnClose = document.querySelector(".close-mobile-menu");
-  const menu = document.querySelector(".mobile-menu");
+  var btnOpen = document.querySelector(".open-mobile-menu");
+  var btnClose = document.querySelector(".close-mobile-menu");
+  var menu = document.querySelector(".mobile-menu");
   
   btnOpen.addEventListener("click", () => {
     menu.classList.toggle("hidden");

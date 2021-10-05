@@ -40,4 +40,6 @@ pt-BR:
     models:
       user: Usuário
   pages:
-    team: Equipe
+    team: 
+      sub_title: Pesquisadores, colaboradores e alunos
+      title: Equipe
