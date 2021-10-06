@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.container {
+  max-width: 1024px !important;
+}
+
 a {
   @apply text-gray-500;
 }
