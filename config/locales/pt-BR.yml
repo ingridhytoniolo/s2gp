@@ -45,6 +45,18 @@ pt-BR:
       name: Nome
       message: Mensagem
   pages:
+    app:
+      pages:
+        dashboard:
+          title: Dashboard
+        projects:
+          title: Projetos
+        settings:
+          title: Configurações
+        team:
+          title: Equipe
+        users:
+          title: Usuários
     contact:
       sub_title: Fale conosco
       submit: Enviar mensagem

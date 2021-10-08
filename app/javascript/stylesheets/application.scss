@@ -49,3 +49,19 @@ textarea:focus {
 label {
   @apply block mt-3 text-xs text-gray-600 font-semibold uppercase;
 }
+
+.sidebar-menu {
+  @apply mt-8;
+  
+  li {
+    @apply flex items-center px-3 py-3 mb-2 rounded text-gray-800 hover:text-white hover:bg-gray-800;
+
+    span {
+      @apply ml-3;
+    }
+  }
+
+  .active {
+    @apply bg-gray-100;
+  }
+}

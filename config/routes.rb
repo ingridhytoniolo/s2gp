@@ -5,4 +5,9 @@ Rails.application.routes.draw do
 
   get '/contact', to: 'pages#contact'
   get '/team', to: 'pages#team'
+
+  namespace :app do
+    get '/', to: 'pages#index'
+    get '/team', to: 'pages/team#index'
+  end
 end
