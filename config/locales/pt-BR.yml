@@ -54,6 +54,8 @@ pt-BR:
         settings:
           title: Configurações
         team:
+          buttons:
+            new: Adicionar novo
           title: Equipe
         users:
           title: Usuários
