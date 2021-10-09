@@ -1,0 +1,53 @@
+<header class="md:hidden -m-4 mb-4 text-gray-600 shadow-sm flex flex-row h-16 p-4 items-center">
+  <div class="flex w-1/4 md:w-2/5">
+    <nav class="flex items-center">
+      <button class="appearance-none outline-none open-mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+      </button>
+    </nav>
+  </div>
+  <div class="flex w-1/2 md:w-1/5 items-center justify-center">
+    <%= link_to raw("<span class='text-center text-black text-xl font-semibold'>#{@group[:name] || 'S2GP'}</span>"), app_path %>
+  </div>
+  <div class="flex w-1/4 md:w-2/5 items-center justify-end">
+    <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+      </svg>'), destroy_user_session_path, method: :delete, class: 'ml-3' %>
+  </div>
+</header>
+<div class="hidden md:hidden mobile-menu fixed z-10 inset-0 overflow-y-auto">
+  <div class="flex h-screen">
+    <div class="background fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+    <div class="w-80 bg-white p-4 overflow-hidden shadow-xl transform">
+      <div class="grid grid-cols-2 items-center">
+        <span class="text-black text-xl font-semibold"><%= @group[:name] || 'S2GP' %></span>
+        <button class="appearance-none close-mobile-menu justify-self-end">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <%= render 'app/shared/menu' %>
+    </div>
+  </div>
+</div>
+<script>
+  var btnOpen = document.querySelector(".open-mobile-menu");
+  var btnClose = document.querySelector(".close-mobile-menu");
+  var menu = document.querySelector(".mobile-menu");
+  var background = document.querySelector(".background");
+  var nav = document.querySelector(".sidebar-menu");
+  
+  background.addEventListener("click", () => {
+    menu.classList.add("hidden");
+  })
+  nav.addEventListener("click", () => {
+    menu.classList.add("hidden");
+  })
+  btnOpen.addEventListener("click", () => {
+    menu.classList.remove("hidden");
+  });
+  btnClose.addEventListener("click", () => {
+    menu.classList.add("hidden");
+  });
+</script>
