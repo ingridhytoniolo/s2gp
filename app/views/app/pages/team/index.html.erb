@@ -10,7 +10,7 @@
     <tr>
       <th>{photo_url}</th>
       <th>{name}</th>
-      <th class="hidden md:block">{role}</th>
+      <th>{role}</th>
       <th>{edit}</th>
     </tr>
   </thead>
@@ -18,12 +18,12 @@
     <% @team.each do |member| %>
       <tr>
         <td>
-          <img alt="team" class="rounded-full w-12 h-12 object-cover object-center mx-auto bg-gray-100" src="<%= member[:photo_url] %>">
+          <img alt="team" class="rounded-full w-8 h-8 object-cover object-center mx-auto bg-gray-100" src="<%= member[:photo_url] %>">
         </td>
         <td class="text-left">
           <%= member[:name] %>
         </td>
-        <td class="hidden md:block">
+        <td>
           <%= member[:role] %>
         </td>
         <td>
