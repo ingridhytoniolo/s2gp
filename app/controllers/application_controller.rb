@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Pundit
   around_action :switch_locale
   before_action :load_group_info
 

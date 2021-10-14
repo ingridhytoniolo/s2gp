@@ -1,5 +1,6 @@
 class App::Pages::TeamController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize_page
   before_action :set_active_menu
 
   layout 'app'
@@ -41,6 +42,10 @@ class App::Pages::TeamController < ApplicationController
   end
 
   private
+
+  def authorize_page
+    authorize :team
+  end
 
   def set_active_menu
     @active_menu = 'team'

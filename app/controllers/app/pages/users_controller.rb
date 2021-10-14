@@ -1,5 +1,6 @@
 class App::Pages::UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize_page
   before_action :set_active_menu
 
   layout 'app'
@@ -9,6 +10,10 @@ class App::Pages::UsersController < ApplicationController
   end
 
   private
+
+  def authorize_page
+    authorize :user
+  end
 
   def set_active_menu
     @active_menu = 'users'
