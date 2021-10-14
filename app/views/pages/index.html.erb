@@ -5,9 +5,9 @@
       <%= image_tag(@group[:logo_url]) %>
     </div>
     <div class="md:w-2/3">
-      <h2 class="text-2xl text-gray-800 mt-4 mb-2"><%= @group[:long_name] %></h2>
+      <h2 class="text-2xl text-gray-800 mt-4 mb-2"><%= @group["long_name_#{I18n.locale.to_s.sub('-','_')}".to_sym] %></h2>
       <span class="inline-block h-1 w-24 rounded bg-gray-100 mb-4"></span>
-      <div class="text-sm text-gray-600 text-justify leading-loose"><%= raw(@group[:about]) %></div>
+      <div class="text-sm text-gray-600 text-justify leading-loose"><%= raw(@group["about_#{I18n.locale.to_s.sub('-','_')}".to_sym]) %></div>
     </div>
   </div>
 </div>

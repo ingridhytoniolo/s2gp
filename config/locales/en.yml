@@ -2,3 +2,29 @@ en:
   helpers:
     failure:
       unauthorized: You are not authorized to perform this action.
+    labels:
+      email: Email
+      name: Name
+      message: Message
+  pages:
+    app:
+      pages:
+        dashboard:
+          title: Dashboard
+        projects:
+          title: Projects
+        settings:
+          title: Settings
+        team:
+          buttons:
+            new: Add new
+          title: Team
+        users:
+          title: Users
+    contact:
+      sub_title: Contact us
+      submit: Send message
+      title: Contact
+    team: 
+      sub_title: Researchers, collaborators and students
+      title: Team

@@ -1,1 +1,30 @@
 fr:
+  helpers:
+    failure:
+      unauthorized: Vous n'êtes pas autorisé à effectuer cette action.
+    labels:
+      email: E-mail
+      name: Nom
+      message: Message
+  pages:
+    app:
+      pages:
+        dashboard:
+          title: Tableau de bord
+        projects:
+          title: Projets
+        settings:
+          title: Paramètres
+        team:
+          buttons:
+            new: Ajouter un nouveau
+          title: Équipe
+        users:
+          title: Utilisateurs
+    contact:
+      sub_title: Contactez-nous
+      submit: Envoyer le message
+      title: Contact
+    team: 
+      sub_title: Chercheurs, collaborateurs et étudiants
+      title: Équipe
