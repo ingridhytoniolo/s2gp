@@ -40,6 +40,8 @@ pt-BR:
     models:
       user: Usuário
   helpers:
+    failure:
+      unauthorized: Ação não permitida.
     labels:
       email: E-mail
       name: Nome

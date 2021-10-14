@@ -1,9 +1,16 @@
 class ApplicationController < ActionController::Base
   include Pundit
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   around_action :switch_locale
   before_action :load_group_info
 
   private
+
+  def user_not_authorized
+    flash[:alert] = t('helpers.failure.unauthorized')
+    redirect_to(request.referrer || app_path)
+  end
 
   def switch_locale(&action)
     cookies[:locale] = params[:locale] if params[:locale]

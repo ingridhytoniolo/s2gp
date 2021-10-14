@@ -2,7 +2,9 @@
 <div class="flex items-center mb-4">
   <h1><%= t("pages.app.pages.team.title") %></h1>
   <div class="flex flex-auto justify-end">
-    <%= link_to t("pages.app.pages.team.buttons.new"), '#', class: 'button-link' %>
+    <% if current_user.admin? %>
+      <%= link_to t("pages.app.pages.team.buttons.new"), '#', class: 'button-link' %>
+    <% end %>
   </div>
 </div>
 <table class="table-auto w-full">
@@ -10,7 +12,9 @@
     <tr>
       <th class="w-1/12">{photo_url}</th>
       <th>{name}</th>
-      <th class="w-1/12">{edit}</th>
+      <% if current_user.admin? %>
+        <th class="w-1/12">{edit}</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -23,13 +27,15 @@
           <%= member[:name] %><br />
           <span class="text-gray-400"><%= member[:role] %></span>
         </td>
-        <td>
-          <a href="#" class="flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-            </svg>
-          </a>
-        </td>
+        <% if current_user.admin? %>
+          <td>
+            <a href="#" class="flex justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+            </a>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

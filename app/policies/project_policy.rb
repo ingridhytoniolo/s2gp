@@ -1,4 +1,4 @@
-class UserPolicy < ApplicationPolicy
+class ProjectPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -6,6 +6,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def index?
-    user.admin?
+    true
   end
 end
