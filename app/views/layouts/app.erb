@@ -5,11 +5,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <script type="application/javascript">
+      var notyf = new Notyf({
+        duration: 5000,
+        ripple: false,
+        position: {
+          x: 'right',
+          y: 'top',
+        },
+        dismissible: true
+      });
+    </script>
+    <% if notice.present? %>
+      <script>
+        notyf.success("<%= notice %>")
+      </script>
+    <% end %>
+    <% if alert.present? %>
+      <script>
+        notyf.error("<%= alert %>")
+      </script>
+    <% end %>
     <div class="flex h-screen">
       <%= render 'layouts/sidebar' %>
       <div class="flex-grow w-full h-full p-4 overflow-scroll">
