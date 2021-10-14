@@ -8,10 +8,9 @@
 <table class="table-auto w-full">
   <thead>
     <tr>
-      <th>{photo_url}</th>
+      <th class="w-1/12">{photo_url}</th>
       <th>{name}</th>
-      <th>{role}</th>
-      <th>{edit}</th>
+      <th class="w-1/12">{edit}</th>
     </tr>
   </thead>
   <tbody>
@@ -21,10 +20,8 @@
           <img alt="team" class="rounded-full w-8 h-8 object-cover object-center mx-auto bg-gray-100" src="<%= member[:photo_url] %>">
         </td>
         <td class="text-left">
-          <%= member[:name] %>
-        </td>
-        <td>
-          <%= member[:role] %>
+          <%= member[:name] %><br />
+          <span class="text-gray-400"><%= member[:role] %></span>
         </td>
         <td>
           <a href="#" class="flex justify-center">
