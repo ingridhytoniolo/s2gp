@@ -9,6 +9,7 @@
   <thead>
     <tr>
       <th>{email}</th>
+      <th class="hidden md:table-cell">{roles}</th>
       <th class="hidden md:table-cell w-3/12">{created_at}</th>
       <th class="w-1/12">{edit}</th>
     </tr>
@@ -18,6 +19,11 @@
       <tr>
         <td class="text-left">
           <%= user[:email] %>
+        </td>
+        <td class="hidden md:table-cell">
+          <% user[:roles].each do |r| %>
+            <span class="inline-block py-1 px-2 rounded bg-gray-100 text-xs font-medium tracking-widest"><%= r %></span>
+          <% end %>
         </td>
         <td class="hidden md:table-cell">
           <%= user[:created_at] %>
