@@ -29,6 +29,11 @@ class ApplicationController < ActionController::Base
         <p>GEPTA is a research group, led by Professors Doctors Luiz Antônio Pereira Neves and José Elmar Feger, located in the Professional and Technological Education Sector of UFPR, on the Polytechnic campus of Curitiba.</p>
         <p>This group develops academic and applied research in the large Interdisciplinary area at the Federal University of Paraná, with the main focus of promoting applied research in the lines of digital image processing, biomedical and rehabilitation engineering, biometrics, embedded systems, robotics, web application development , technologies with mobile devices and technologies for information management, applied in education, health and tourism.<p>
       ',
+      long_name_es: 'Grupo de Estudio e Investigación de Tecnología Aplicada',
+      about_es: '
+        <p> GEPTA es un grupo de investigación, liderado por los Profesores Doctores Luiz Antônio Pereira Neves y José Elmar Feger, ubicado en el Sector de Educación Profesional y Tecnológica de la UFPR, en el campus Politécnico de Curitiba. </p>
+        <p> Este grupo desarrolla investigación académica y aplicada en la gran área Interdisciplinaria de la Universidad Federal de Paraná, con el foco principal de promover la investigación aplicada en las líneas de procesamiento de imágenes digitales, ingeniería biomédica y rehabilitación, biometría, sistemas embebidos, robótica, desarrollo de aplicaciones web, tecnologías con dispositivos móviles y tecnologías para la gestión de la información, aplicadas en educación, salud y turismo. <p>
+      ',
       long_name_fr: 'Groupe d’études et de Recherche en Technologie Appliquée,',
       about_fr: '
         <p>GEPTA est un groupe de recherche dirigé par les professeurs Luiz Antônio Pereira Neves et José Elmar Feger, du secteur de l’enseignement professionnel et technologique, de l’université fédérale de Paraná( UFPR), situé au campus polytechnique de Curitiba.</p>

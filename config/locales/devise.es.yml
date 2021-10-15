@@ -1,0 +1,146 @@
+es:
+  devise:
+    confirmations:
+      confirmed: Tu correo electrónico ha sido confirmado exitosamente.
+      new:
+        resend_confirmation_instructions: Reenviar instrucciones de confirmación
+      send_instructions: Recibirás un email con las instrucciones para confirmar tu correo electrónico en unos minutos.
+      send_paranoid_instructions: Si tu correo electrónico existe en nuestra base de datos, recibirás un email con las instrucciones para confirmar tu correo electrónico en unos minutos.
+    failure:
+      already_authenticated: ""
+      inactive: Tu cuenta aún no ha sido activada.
+      invalid: Email y/o contraseña inválidos.
+      locked: Tu cuenta está bloqueada.
+      last_attempt: Tienes un intento más antes que tu cuenta sea bloqueada.
+      not_found_in_database: "%{authentication_keys} o contraseña inválidos."
+      timeout: Tu sesión ha expirado. Inicia sesión nuevamente.
+      unauthenticated: ""
+      unconfirmed: Tienes que confirmar tu cuenta antes de continuar.
+    links:
+      new_confirmation: ¿No recibió el correo electrónico de confirmación?
+      new_password: Olvido la contraseña?
+      new_registration: ¿No tienes una cuenta?
+      new_session: ¿Ya tienes una cuenta?
+      new_unlock: ¿No recibió instrucciones para desbloquear?
+      omniauth_authorize: Inicia sesión con
+    mailer:
+      confirmation_instructions:
+        action: Confirmar mi cuenta
+        greeting: "Bienvenido %{recipient}!"
+        instruction: "Puede confirmar su cuenta a través del enlace a continuación:"
+        subject: Instrucciones de confirmación
+      email_changed:
+        greeting: "Hola %{recipient}!"
+        message: "Nos estamos comunicando con usted para notificarle que su correo electrónico se cambiará a %{email}."
+        message_unconfirmed:
+        subject: Email modificado
+      password_change:
+        greeting: "Hola %{recipient}!"
+        message: Nos estamos comunicando con usted para notificarle que su contraseña ha sido cambiada.
+        subject: Contraseña modificada
+      reset_password_instructions:
+        action: Restablecer mi contraseña
+        greeting: "Hola %{recipient}!"
+        instruction: Alguien le ha pedido que restablezca su contraseña y puede hacerlo haciendo clic en el enlace a continuación.
+        instruction_2: Si no ha realizado esta solicitud, ignore este correo electrónico.
+        instruction_3: Su contraseña no se cambiará hasta que vaya al enlace de arriba y cree una nueva.
+        subject: Instrucciones de cambio de contraseña
+      unlock_instructions:
+        action: Desbloquear mi cuenta
+        greeting: "Hola %{recipient}!"
+        instruction: "Haga clic en el enlace de abajo para desbloquear su cuenta:"
+        message: Su cuenta ha sido bloqueada debido a un número excesivo de intentos de inicio de sesión no válidos.
+        subject: Instrucciones de desbloqueo
+    omniauth_callbacks:
+      failure: "No pudimos autentificar tu cuenta de %{kind} por la siguiente razón: %{reason}."
+      success: "Te autentificaste correctamente con tu cuenta de %{kind}."
+    passwords:
+      edit:
+        change_my_password: Cambiar mi contraseña
+        change_your_password: Cambia tu contraseña
+        confirm_new_password: Confirma tu nueva contraseña
+        new_password: Nueva contraseña
+      new:
+        forgot_your_password: Esqueceu sua senha?
+        send_me_reset_password_instructions: Enviar instruções para redefinição da senha
+      no_token: No puedes acceder a esta página sin venir desde el email de reinicio de contraseña. Si vienes desde ahí, por favor asegúrate de usar la url completa que aparece.
+      send_instructions: Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos.
+      send_paranoid_instructions: Si tu email existe en el sistema, recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos.
+      updated: Tu contraseña fue modificada correctamente. Has iniciado sesión.
+      updated_not_active: Tu contraseña fue modificada correctamente.
+    registrations:
+      destroyed: Adiós, tu cuenta ha sido eliminada. Esperamos verte de vuelta pronto!
+      edit:
+        are_you_sure: ¿Estás seguro?
+        cancel_my_account: Cancelar mi cuenta
+        currently_waiting_confirmation_for_email: "Actualmente esperando: %{email}"
+        leave_blank_if_you_don_t_want_to_change_it: déjelo en blanco si no quiere cambiarlo
+        title: "Editar %{resource}"
+        unhappy: ¿No feliz?
+        update: Actualizar
+        we_need_your_current_password_to_confirm_your_changes: necesitamos su contraseña actual para confirmar sus cambios
+      new:
+        sign_up: Inscribirse
+      signed_up: Bienvenido! Te has registrado correctamente.
+      signed_up_but_inactive: Te has registrado correctamente, pero tu cuenta aun no ha sido activada.
+      signed_up_but_locked: Te has registrado correctamente, pero tu cuenta está bloqueada.
+      signed_up_but_unconfirmed: Te hemos enviado un email con instrucciones para que confirmes tu cuenta.
+      update_needs_confirmation: Actualizaste tu cuenta correctamente, pero tenemos que revalidar tu email. Revisa tu correo para confirmar la dirección.
+      updated: Actualizaste tu cuenta correctamente.
+      updated_but_not_signed_in: Actualizaste tu cuenta correctamente, pero tienes que iniciar sesión nuevamente porque tu contraseña ha cambiado.
+    sessions:
+      already_signed_out: ""
+      new:
+        sign_in: Entrar
+        sign_out: Salir
+      signed_in: ""
+      signed_out: ""
+    shared:
+      links:
+        back: Vuelve
+        didn_t_receive_confirmation_instructions: ¿No recibió instrucciones de confirmación?
+        didn_t_receive_unlock_instructions: ¿No recibió instrucciones de desbloqueo?
+        forgot_your_password: Olvidaste tu contraseña?
+        sign_in: Acceso
+        sign_in_with_provider: "Inicia sesión con %{provider}"
+        sign_up: Inscribirse
+      minimum_password_length:
+        one: "(Mínimo de %{count} carácter)"
+        other: "(Mínimo de %{count} caracteres)"
+    unlocks:
+      new:
+        resend_unlock_instructions: Reenviar instrucciones de desbloqueo
+      send_instructions: Recibirás un email con instrucciones para desbloquear tu cuenta en unos minutos
+      send_paranoid_instructions: Si tu cuenta existe, recibirás un email con instrucciones para desbloquear tu cuenta en unos minutos
+      unlocked: Tu cuenta ha sido desbloqueada. Inicia sesión para continuar.
+    views:
+      confirmations:
+        new:
+          sub_title: confirme su cuenta
+          submit: Solicitar correo electrónico de confirmación
+          title: Hola,
+      passwords:
+        new:
+          sub_title: ¿olvido la contraseña?
+          submit: Pide nueva contraseña
+          title: Hola,
+      registrations:
+        new:
+          sub_title: haz tu registro
+          submit: Registrar
+          title: Hola,
+      sessions:
+        new:
+          sub_title: ingrese a su cuenta
+          submit: Mandar
+          title: Hola,
+  errors:
+    messages:
+      already_confirmed: ya fue confirmada. Intenta ingresar.
+      confirmation_period_expired: necesita ser confirmada dentro de %{period}, por favor pide una nueva
+      expired: ha expirado, por favor pide una nueva
+      not_found: no encontrado
+      not_locked: no ha sido bloqueada
+      not_saved:
+        one: "Ha ocurrido 1 error:"
+        other: "Han ocurrido %{count} errores:"

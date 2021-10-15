@@ -1,0 +1,70 @@
+es:
+  activerecord:
+    attributes:
+      user:
+        confirmation_sent_at: Confirmación enviada el
+        confirmation_token: Token de confirmación
+        confirmed_at: Confirmado em
+        created_at: Creado el
+        current_password: Contraseña actual
+        current_sign_in_at: Iniciado sesión actualmente en
+        current_sign_in_ip: IP de acceso actual
+        email: Correo electrónico
+        encrypted_password: Contraseña cifrada
+        failed_attempts: Intentos fallidos
+        last_sign_in_at: Último inicio de sesión
+        last_sign_in_ip: IP de último acceso
+        locked_at: Bloqueado em
+        password: Contraseña
+        password_confirmation: Confirme su contraseña
+        remember_created_at: Recuerda creado en
+        remember_me: Recuérdame
+        reset_password_sent_at: Restablecer contraseña enviada en
+        reset_password_token: Restablecer el token de contraseña
+        sign_in_count: Recuento de acceso
+        unconfirmed_email: Correo electrónico no confirmado
+        unlock_token: Desbloquear token
+        updated_at: Actualizado el
+    errors:
+      models:
+        user:
+          attributes:
+            confirmation_token:
+              blank: no informado
+            email:
+              taken: ya registrado
+            password:
+              too_short: es demasiado corta
+            password_confirmation:
+              confirmation: no es igual a contraseña
+    models:
+      user: Usuário
+  helpers:
+    failure:
+      unauthorized: No está autorizado para realizar esta acción.
+    labels:
+      email: Correo electrónico
+      name: Nombre
+      message: Mensaje
+  pages:
+    app:
+      pages:
+        dashboard:
+          title: Tablero
+        projects:
+          title: Proyectos
+        settings:
+          title: Ajustes
+        team:
+          buttons:
+            new: Añadir nuevo
+          title: Equipo
+        users:
+          title: Usuarios
+    contact:
+      sub_title: Contacta con nosotros
+      submit: Enviar mensaje
+      title: Contacto
+    team: 
+      sub_title: Investigadores, colaboradores y estudiantes
+      title: Equipo
