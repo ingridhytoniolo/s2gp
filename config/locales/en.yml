@@ -65,6 +65,8 @@ en:
       sub_title: Contact us
       submit: Send message
       title: Contact
+    index:
+      title: Home
     team: 
       sub_title: Researchers, collaborators and students
       title: Team

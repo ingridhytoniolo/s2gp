@@ -65,6 +65,8 @@ fr:
       sub_title: Contactez-nous
       submit: Envoyer le message
       title: Contact
+    index:
+      title: Début
     team: 
       sub_title: Chercheurs, collaborateurs et étudiants
       title: Équipe

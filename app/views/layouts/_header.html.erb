@@ -1,6 +1,9 @@
 <%
   menu = [
     {
+      title: t('pages.index.title'),
+      url: root_path
+    },{
       title: t('pages.team.title'),
       url: team_path
     },{
@@ -46,7 +49,7 @@
       </div>
       <nav class="nav flex flex-col pt-4">
         <% menu.each do |i| %>
-          <%= link_to i[:name], i[:url], class: 'mb-4 hover:text-gray-900' %>
+          <%= link_to i[:title], i[:url], class: 'mb-4 hover:text-gray-900' %>
         <% end %>
       </nav>
     </div>
