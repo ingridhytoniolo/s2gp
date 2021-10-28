@@ -21,33 +21,63 @@ h2 {
   @apply text-xl text-gray-400 font-medium;
 }
 
+.button-link {
+  @apply text-xs font-semibold text-gray-600 hover:text-gray-900 uppercase bg-gray-100 hover:bg-gray-200 border-0 py-2 px-4 ml-2 focus:outline-none rounded;
+}
+button:not(.appearance-none) {
+  @apply py-3 mt-4 font-medium tracking-widest text-gray-600 hover:text-gray-900 uppercase bg-gray-100 hover:bg-gray-200 focus:outline-none rounded;
+}
+button:not(.appearance-none):focus,
+button:not(.appearance-none):hover {
+  @apply outline-none bg-gray-200;
+}
+button:not(.appearance-none):disabled {
+  @apply bg-gray-300;
+}
+
 button.primary {
-  @apply py-3 mt-4 font-medium tracking-widest uppercase rounded text-white bg-gray-900;
+  @apply text-white bg-gray-900;
 }
 button.primary:focus,
 button.primary:hover {
-  @apply outline-none bg-gray-800;
+  @apply text-white outline-none bg-gray-800;
 }
 button.primary:disabled {
-  @apply bg-gray-600;
+  @apply text-white bg-gray-600;
 }
 
-input[type=email],
-input[type=password],
-input[type=text],
+input[type="email"],
+input[type="password"],
+input[type="text"],
 textarea {
   @apply block w-full p-3 mt-1 text-gray-700 bg-gray-50 border-2 border-gray-300 rounded;
 }
-input[type=email]:focus,
-input[type=password]:focus,
-input[type=text]:focus,
+input[type="checkbox"] {
+  @apply block p-2 mr-2 outline-none bg-gray-50 border-2 border-gray-300 rounded;
+}
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
 textarea:focus {
   box-shadow: none;
   @apply border-gray-600;
 }
+input[type="checkbox"],
+input[type="checkbox"]:focus {
+  box-shadow: none;
+}
+input[type="checkbox"]:checked,
+input[type="checkbox"]:checked:focus,
+input[type="checkbox"]:checked:hover {
+  @apply border-gray-600 bg-gray-800;
+}
 
 label {
-  @apply block mt-3 text-xs text-gray-600 font-semibold uppercase;
+  @apply block text-xs text-gray-600 font-semibold uppercase;
+}
+
+.field {
+  @apply mt-3;
 }
 
 table {
@@ -58,7 +88,7 @@ table {
       @apply p-2 text-center text-gray-400;
     }
   }
-  
+
   tbody tr {
     @apply text-sm border-b border-gray-100;
 
@@ -68,13 +98,9 @@ table {
   }
 }
 
-.button-link {
-  @apply text-xs font-semibold text-gray-600 hover:text-gray-900 uppercase bg-gray-100 border-0 py-2 px-4 ml-2 focus:outline-none hover:bg-gray-200 rounded;
-}
-
 .sidebar-menu {
   @apply mt-8;
-  
+
   li {
     @apply flex items-center px-3 py-3 mb-2 rounded text-gray-800 hover:text-white hover:bg-gray-800;
 
@@ -86,4 +112,14 @@ table {
   .active {
     @apply bg-gray-100;
   }
+}
+
+.badge {
+  @apply inline-block py-1 px-2 rounded bg-gray-100 text-xs font-medium tracking-widest;
+}
+.badge-red {
+  @apply bg-red-100;
+}
+.badge-yellow {
+  @apply bg-yellow-100;
 }

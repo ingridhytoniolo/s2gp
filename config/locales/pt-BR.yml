@@ -34,6 +34,7 @@ pt-BR:
             email:
               taken: já cadastrado
             password:
+              blank: não informada
               too_short: é muito curta
             password_confirmation:
               confirmation: não é igual a senha
@@ -60,6 +61,8 @@ pt-BR:
             new: Adicionar novo
           title: Equipe
         users:
+          buttons:
+            new: Adicionar novo
           title: Usuários
     contact:
       sub_title: Fale conosco

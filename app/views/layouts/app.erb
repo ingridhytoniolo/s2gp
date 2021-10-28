@@ -40,5 +40,10 @@
         <%= yield %>
       </div>
     </div>
+    <script type="application/javascript">
+      $('form').submit(function() {
+        $('input').blur();
+      });
+    </script>
   </body>
 </html>

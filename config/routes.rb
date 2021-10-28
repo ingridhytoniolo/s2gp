@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     get '/projects', to: 'pages/projects#index'
     get '/settings', to: 'pages/settings#index'
     get '/team', to: 'pages/team#index'
-    get '/users', to: 'pages/users#index'
+    resources :users, controller: 'pages/users'
   end
 end

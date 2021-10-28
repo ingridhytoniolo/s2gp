@@ -2,7 +2,7 @@
 <div class="flex items-center mb-4">
   <h1><%= t("pages.app.pages.users.title") %></h1>
   <div class="flex flex-auto justify-end">
-    <%= link_to t("pages.app.pages.users.buttons.new"), '#', class: 'button-link' %>
+    <%= link_to t("pages.app.pages.users.buttons.new"), new_app_user_path, class: 'open-modal button-link', remote: true %>
   </div>
 </div>
 <table class="table-auto w-full">
@@ -19,17 +19,23 @@
       <tr>
         <td class="text-left">
           <%= user[:email] %>
+          <% if user[:unconfirmed_email].present? %>
+            <span class="badge badge-yellow"><%= user[:unconfirmed_email] %></span>
+          <% end %>
+          <% if user[:confirmed_at].nil? %>
+            <span class="badge badge-red">{not_confirmed}</span>
+          <% end %>
         </td>
         <td class="hidden md:table-cell">
           <% user[:roles].each do |r| %>
-            <span class="inline-block py-1 px-2 rounded bg-gray-100 text-xs font-medium tracking-widest"><%= r %></span>
+            <span class="badge"><%= r %></span>
           <% end %>
         </td>
         <td class="hidden md:table-cell">
           <%= user[:created_at] %>
         </td>
         <td>
-          <a href="#" class="flex justify-center">
+          <a href="<%= edit_app_user_path(user) %>" class="open-modal appearance-none flex justify-center" data-remote="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
@@ -39,3 +45,4 @@
     <% end %>
   </tbody>
 </table>
+<%= render 'app/shared/modal' %>
