@@ -22,16 +22,21 @@ h2 {
 }
 
 .button-link {
-  @apply text-xs font-semibold text-gray-600 hover:text-gray-900 uppercase bg-gray-100 hover:bg-gray-200 border-0 py-2 px-4 ml-2 focus:outline-none rounded;
+  @apply text-xs font-semibold text-gray-600 uppercase bg-gray-100 border-0 py-2 px-4 ml-2 rounded;
 }
-button:not(.appearance-none) {
-  @apply py-3 mt-4 font-medium tracking-widest text-gray-600 hover:text-gray-900 uppercase bg-gray-100 hover:bg-gray-200 focus:outline-none rounded;
+.button-link:focus,
+.button-link:hover {
+  @apply text-gray-900 bg-gray-200 outline-none;
 }
-button:not(.appearance-none):focus,
-button:not(.appearance-none):hover {
-  @apply outline-none bg-gray-200;
+
+button:not(.appearance-none, .notyf__dismiss-btn) {
+  @apply py-3 mt-4 font-medium tracking-widest text-gray-600 uppercase bg-gray-100 rounded;
 }
-button:not(.appearance-none):disabled {
+button:not(.appearance-none, .notyf__dismiss-btn):focus,
+button:not(.appearance-none, .notyf__dismiss-btn):hover {
+  @apply text-gray-900 bg-gray-200 outline-none;
+}
+button:not(.appearance-none, .notyf__dismiss-btn):disabled {
   @apply bg-gray-300;
 }
 
@@ -40,7 +45,7 @@ button.primary {
 }
 button.primary:focus,
 button.primary:hover {
-  @apply text-white outline-none bg-gray-800;
+  @apply text-white bg-gray-800 outline-none;
 }
 button.primary:disabled {
   @apply text-white bg-gray-600;
