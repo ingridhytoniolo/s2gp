@@ -53,6 +53,8 @@ pt-BR:
         dashboard:
           title: Dashboard
         projects:
+          buttons:
+            new: Adicionar novo
           title: Projetos
         settings:
           title: Configurações
@@ -70,6 +72,11 @@ pt-BR:
       title: Contato
     index:
       title: Início
+    projects:
+      buttons:
+        open: Ver projeto
+      sub_title: Consulte os projetos do grupo
+      title: Projetos
     team: 
       sub_title: Pesquisadores, colaboradores e alunos
       title: Equipe

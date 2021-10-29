@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   root 'pages#index'
   
   devise_for :users
-
-  get '/contact', to: 'pages#contact'
+  
   get '/team', to: 'pages#team'
+  resources :projects
+  get '/contact', to: 'pages#contact'
 
   namespace :app do
     get '/', to: 'pages#index'
