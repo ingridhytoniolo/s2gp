@@ -1,0 +1,15 @@
+<%= render 'app/shared/header' %>
+<div class="flex items-center mb-4">
+  <h1><%= t("pages.app.pages.profile.title") %></h1>
+  <div class="flex flex-auto justify-end">
+    <%= link_to t("pages.app.pages.profile.buttons.edit"), edit_app_profile_path(current_user), class: 'open-modal button-link', remote: true %>
+  </div>
+</div>
+<% if @profile.avatar.attached? %>
+  <%= image_tag @profile.avatar %>
+<% else %>
+  {{ WITHOUT AVATAR }}
+<% end %>
+<br />
+<%= @profile.to_json %>
+<%= render 'app/shared/modal' %>

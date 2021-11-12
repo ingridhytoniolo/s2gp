@@ -52,6 +52,8 @@ pt-BR:
       pages:
         dashboard:
           title: Dashboard
+        profile:
+          title: Perfil
         projects:
           buttons:
             new: Adicionar novo

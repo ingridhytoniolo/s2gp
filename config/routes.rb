@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :app do
     get '/', to: 'pages#index'
+    resources :profile, controller: 'pages/profile'
     get '/projects', to: 'pages/projects#index'
     get '/settings', to: 'pages/settings#index'
     get '/team', to: 'pages/team#index'

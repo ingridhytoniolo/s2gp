@@ -1,0 +1,18 @@
+<%= form_with(model: [ :app, profile ], local: false, id: 'modal-form') do |f| %>
+  <h1 class="text-xl font-semibold"><%= title %></h1>
+  <div id="modal-errors"></div>
+  <div class="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+  </div>
+  <div class="actions flex flex-col-reverse sm:flex-row sm:gap-4">
+    <%= f.button '{cancel}', type: :button, onClick: 'resetModal()', class: 'w-full sm:w-1/2',
+          data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+    <%= f.button '{submit}', type: :submit, class: 'primary w-full sm:w-1/2',
+          data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+  </div>
+<% end %>
