@@ -54,6 +54,7 @@ button.primary:disabled {
 input[type="email"],
 input[type="password"],
 input[type="text"],
+select,
 textarea {
   @apply block w-full p-3 mt-1 text-gray-700 bg-gray-50 border-2 border-gray-300 rounded;
 }
@@ -66,6 +67,7 @@ input[type="file"]:focus {
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="text"]:focus,
+select:focus,
 textarea:focus {
   box-shadow: none;
   @apply border-gray-600;
@@ -73,6 +75,7 @@ textarea:focus {
 input[type="email"]:disabled,
 input[type="password"]:disabled,
 input[type="text"]:disabled,
+select:disabled,
 textarea:disabled {
   box-shadow: none;
   @apply border-gray-100 bg-gray-50 text-gray-400;

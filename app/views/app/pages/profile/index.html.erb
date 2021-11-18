@@ -24,18 +24,20 @@
     <% end %>
   </div>
   <div class="w-full lg:w-2/3">
+    <%= form_with(model: [ :app, @profile ]) do |f| %>
     <div class="field">
-      <%= label_tag :name %>
-      <%= text_field_tag :name, @profile.name, disabled: true %>
+      <%= f.label :name %>
+      <%= f.text_field :name, disabled: true %>
     </div>
     <div class="field">
-      <%= label_tag :role %>
-      <%= text_field_tag :role, @profile.role, disabled: true %>
+      <%= f.label :role %>
+      <%= f.text_field :role, value: @profile.role.nil? ? nil : Profile.human_attribute_name("roles.#{@profile.role}"), disabled: true %>
     </div>
     <div class="field">
-      <%= label_tag :lattes_url %>
-      <%= text_field_tag :lattes_url, @profile.lattes_url, disabled: true %>
+      <%= f.label :lattes_url %>
+      <%= f.text_field :lattes_url, disabled: true %>
     </div>
+    <% end %>
   </div>
 </div>
 <%= render 'app/shared/modal' %>

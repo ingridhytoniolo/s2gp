@@ -7,7 +7,7 @@
   </div>
   <div class="field">
     <%= f.label :role %>
-    <%= f.select :role, Profile.roles, { include_blank: true } %>
+    <%= f.select :role, Profile.roles.keys.map {|r| [Profile.human_attribute_name("roles.#{r}"), r]}, { include_blank: true } %>
   </div>
   <div class="field">
     <%= f.label :lattes_url %>

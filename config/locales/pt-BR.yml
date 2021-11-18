@@ -1,6 +1,13 @@
 pt-BR:
   activerecord:
     attributes:
+      profile:
+        lattes_url: Currículo Lattes
+        name: Nome
+        role: Função
+      profile/roles:
+        researcher: Pesquisador
+        student: Aluno
       user:
         confirmation_sent_at: Confirmação enviada em
         confirmation_token: Token de confirmação
@@ -40,6 +47,7 @@ pt-BR:
               confirmation: não é igual a senha
     models:
       user: Usuário
+      profile: Perfil
   helpers:
     failure:
       unauthorized: Ação não permitida.
