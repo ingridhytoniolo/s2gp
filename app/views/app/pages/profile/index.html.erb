@@ -30,6 +30,10 @@
       <%= f.text_field :name, disabled: true %>
     </div>
     <div class="field">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, current_user.email, disabled: true %>
+    </div>
+    <div class="field">
       <%= f.label :role %>
       <%= f.text_field :role, value: @profile.role.nil? ? nil : Profile.human_attribute_name("roles.#{@profile.role}"), disabled: true %>
     </div>
