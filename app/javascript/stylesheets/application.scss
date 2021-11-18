@@ -60,12 +60,22 @@ textarea {
 input[type="checkbox"] {
   @apply block p-2 mr-2 outline-none bg-gray-50 border-2 border-gray-300 rounded;
 }
+input[type="file"]:focus {
+  @apply outline-none;
+}
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="text"]:focus,
 textarea:focus {
   box-shadow: none;
   @apply border-gray-600;
+}
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="text"]:disabled,
+textarea:disabled {
+  box-shadow: none;
+  @apply border-gray-100 bg-gray-50 text-gray-400;
 }
 input[type="checkbox"],
 input[type="checkbox"]:focus {
