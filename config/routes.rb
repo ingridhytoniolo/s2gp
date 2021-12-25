@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   get '/team', to: 'pages#team'
-  resources :projects
+  get '/projects', to: 'pages#projects'
   get '/contact', to: 'pages#contact'
 
   namespace :app do
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get :new_avatar, to: 'pages/profile#new_avatar'
       delete :delete_avatar, to: 'pages/profile#delete_avatar'
     end
-    get '/projects', to: 'pages/projects#index'
+    resources :projects, controller: 'pages/projects'
     get '/settings', to: 'pages/settings#index'
     get '/team', to: 'pages/team#index'
     resources :users, controller: 'pages/users'

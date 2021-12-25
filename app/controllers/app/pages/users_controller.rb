@@ -25,7 +25,7 @@ class App::Pages::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:notice] = "{success}"
+      flash[:notice] = t('shared.success')
       redirect_to app_users_path
     else
       respond_to do |format|
@@ -47,8 +47,10 @@ class App::Pages::UsersController < ApplicationController
 
     @user.update(roles: nil) if user_params[:roles].nil?
 
+    @user.reset_password(user_params[:password], user_params[:password]) if user_params[:password]
+
     if @user.update_without_password(user_params)
-      flash[:notice] = "{success}"
+      flash[:notice] = t('shared.success')
       redirect_to app_users_path
     else
       respond_to do |format|

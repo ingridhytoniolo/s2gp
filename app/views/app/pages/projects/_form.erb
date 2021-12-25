@@ -1,9 +1,31 @@
-<%= form_with(model: [ :app, profile ], local: false, id: 'modal-form') do |f| %>
+<%= form_with(model: [ :app, project ], local: false, id: 'modal-form') do |f| %>
   <h1 class="text-xl font-semibold"><%= title %></h1>
   <div id="modal-errors"></div>
   <div class="field">
     <%= f.label :avatar %>
-    <%= f.file_field :avatar, required: true %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true %>
+  </div>
+  <div class="cols">
+    <div class="field w-1/2">
+      <%= f.label :start_at %>
+      <%= f.text_field :start_at, data: { inputmask: {'alias': 'date'} } %>
+    </div>
+    <div class="field w-1/2">
+      <%= f.label :end_at %>
+      <%= f.text_field :end_at %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :main_goal %>
+    <%= f.text_area :main_goal %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
   </div>
   <div class="actions">
     <%= f.button t('shared.cancel'), type: :button, class: 'w-full sm:w-1/2', onClick: 'resetModal()',

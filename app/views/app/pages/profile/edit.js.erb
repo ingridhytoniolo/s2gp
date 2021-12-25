@@ -1,1 +1,1 @@
-$("#modal-body").html("<%= escape_javascript(render partial: 'form', locals: { profile: current_user.profile, title: '{edit_profile}' } ) %>");
+$("#modal-body").html("<%= escape_javascript(render partial: 'form', locals: { profile: current_user.profile, title: "#{t('shared.edit')} #{t('activerecord.models.profile')}" } ) %>");

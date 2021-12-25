@@ -11,17 +11,19 @@
   </div>
   <div class="field">
     <%= f.label :roles %>
-    <div class="flex flex-wrap gap-2">
-      <div class="flex items-center my-2">
-        <%= f.check_box :roles, { multiple: true }, 'admin', nil %>
-        <%= f.label :roles_admin, '{admin}', class: 'm-auto' %>
-      </div>
+    <div class="flex flex-wrap gap-4">
+      <% ['admin'].each do |role| %>
+        <div class="flex items-center my-2">
+          <%= f.check_box :roles, { multiple: true }, role, nil %>
+          <%= f.label "roles_#{role}", role %>
+        </div>
+      <% end %>
     </div>
   </div>
-  <div class="actions flex flex-col-reverse sm:flex-row sm:gap-4">
-    <%= f.button '{cancel}', type: :button, onClick: 'resetModal()', class: 'w-full sm:w-1/2',
-          data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
-    <%= f.button '{submit}', type: :submit, class: 'primary w-full sm:w-1/2',
-          data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+  <div class="actions">
+    <%= f.button t('shared.cancel'), type: :button, class: 'w-full sm:w-1/2', onClick: 'resetModal()',
+        data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+    <%= f.button t('shared.submit'), type: :submit, class: 'primary w-full sm:w-1/2',
+        data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
   </div>
 <% end %>

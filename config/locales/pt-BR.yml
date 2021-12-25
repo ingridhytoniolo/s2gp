@@ -8,6 +8,17 @@ pt-BR:
       profile/roles:
         researcher: Pesquisador
         student: Aluno
+      project:
+        description: Descrição
+        end_at: Fim
+        main_goal: Objetivo
+        start_at: Início
+        status: Status
+        title: Título
+      project/statuses:
+        created: Criado
+        done: Concluído
+        paused: Pausado
       user:
         confirmation_sent_at: Confirmação enviada em
         confirmation_token: Token de confirmação
@@ -22,16 +33,20 @@ pt-BR:
         last_sign_in_at: Último acesso em
         last_sign_in_ip: Último IP de acesso
         locked_at: Bloqueado em
+        not_confirmed: Não confirmado
         password: Senha
         password_confirmation: Confirme sua senha
         remember_created_at: Lembrar criado em
         remember_me: Lembre-se de mim
         reset_password_sent_at: Resetar senha enviado em
         reset_password_token: Resetar token de senha
+        roles: Funções
         sign_in_count: Contagem de acessos
         unconfirmed_email: E-mail não confirmado
         unlock_token: Token de desbloqueio
         updated_at: Atualizado em
+      user/roles:
+        admin: Admin
     errors:
       models:
         user:
@@ -48,6 +63,7 @@ pt-BR:
     models:
       user: Usuário
       profile: Perfil
+      project: Projeto
   helpers:
     failure:
       unauthorized: Ação não permitida.
@@ -63,18 +79,12 @@ pt-BR:
         profile:
           title: Perfil
         projects:
-          buttons:
-            new: Adicionar novo
           title: Projetos
         settings:
           title: Configurações
         team:
-          buttons:
-            new: Adicionar novo
           title: Equipe
         users:
-          buttons:
-            new: Adicionar novo
           title: Usuários
     contact:
       sub_title: Fale conosco
@@ -90,3 +100,15 @@ pt-BR:
     team: 
       sub_title: Pesquisadores, colaboradores e alunos
       title: Equipe
+  shared:
+    are_you_sure: Tem certeza?
+    cancel: Cancelar
+    created_at: Data de cadastro
+    edit: Editar
+    email: E-mail
+    join: Participar
+    new: Adicionar
+    roles: Funções
+    submit: Enviar
+    success: Ação realizada com sucesso
+    view: Visualizar

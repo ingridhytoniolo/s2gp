@@ -1,1 +1,1 @@
-$("#modal-body").html("<%= escape_javascript(render partial: 'form', locals: { user: @user, title: '{new_user}' } ) %>");
+$("#modal-body").html("<%= escape_javascript(render partial: 'form', locals: { user: @user, title: "#{t('shared.new')} #{t('activerecord.models.user')}" }) %>");

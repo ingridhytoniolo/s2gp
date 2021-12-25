@@ -2,16 +2,16 @@
 <div class="flex items-center mb-4">
   <h1><%= t("pages.app.pages.users.title") %></h1>
   <div class="flex flex-auto justify-end">
-    <%= link_to t("pages.app.pages.users.buttons.new"), new_app_user_path, class: 'open-modal button-link', remote: true %>
+    <%= link_to t('shared.new'), new_app_user_path, class: 'open-modal button-link', remote: true %>
   </div>
 </div>
 <table class="table-auto w-full">
   <thead>
     <tr>
-      <th>{email}</th>
-      <th class="hidden md:table-cell">{roles}</th>
-      <th class="hidden md:table-cell w-3/12">{created_at}</th>
-      <th class="w-1/12">{edit}</th>
+      <th><%= t('shared.email') %></th>
+      <th class="hidden md:table-cell"><%= t('shared.roles') %></th>
+      <th class="hidden md:table-cell w-3/12"><%= t('shared.created_at') %></th>
+      <th class="w-1/12"><%= t('shared.edit') %></th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +23,7 @@
             <span class="badge badge-yellow"><%= user[:unconfirmed_email] %></span>
           <% end %>
           <% if user[:confirmed_at].nil? %>
-            <span class="badge badge-red">{not_confirmed}</span>
+            <span class="badge badge-red"><%= t('activerecord.attributes.user.not_confirmed') %></span>
           <% end %>
         </td>
         <td class="hidden md:table-cell">

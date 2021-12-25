@@ -20,8 +20,8 @@ class App::Pages::ProfileController < ApplicationController
   def update
     resize_avatar
 
-    if @profile.update(user_params)
-      flash[:notice] = "{success}"
+    if @profile.update(profile_params)
+      flash[:notice] = t('shared.success')
       redirect_to app_profile_index_path
     else
       respond_to do |format|
@@ -39,7 +39,7 @@ class App::Pages::ProfileController < ApplicationController
   def delete_avatar
     if @profile.avatar.attached?
       @profile.avatar.purge
-      flash[:notice] = "{success}"
+      flash[:notice] = t('shared.success')
     end
 
     redirect_to app_profile_index_path
@@ -51,13 +51,17 @@ class App::Pages::ProfileController < ApplicationController
     authorize :profile
   end
 
+  def profile_params
+    params.require(:profile).permit(:avatar, :name, :role, :lattes_url)
+  end
+
   def resize_avatar
-    return unless user_params['avatar']
+    return unless profile_params['avatar']
 
     acceptable_types = ['image/jpeg', 'image/png']
-    return unless acceptable_types.include?(user_params['avatar'].content_type)
+    return unless acceptable_types.include?(profile_params['avatar'].content_type)
 
-    temp_path = user_params['avatar'].tempfile.path
+    temp_path = profile_params['avatar'].tempfile.path
 
     image = MiniMagick::Image.open(temp_path)
     if image.height < image.width
@@ -77,9 +81,5 @@ class App::Pages::ProfileController < ApplicationController
 
   def set_profile
     @profile = current_user.profile
-  end
-
-  def user_params
-    params.require(:profile).permit(:avatar, :name, :role, :lattes_url)
   end
 end
