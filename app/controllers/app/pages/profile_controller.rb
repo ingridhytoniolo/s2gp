@@ -18,11 +18,12 @@ class App::Pages::ProfileController < ApplicationController
   end
 
   def update
-    resize_avatar
+    helpers.resize_avatar(profile_params['avatar'])
 
     if @profile.update(profile_params)
       flash[:notice] = t('shared.success')
-      redirect_to app_profile_index_path
+
+      redirect_to request.referer
     else
       respond_to do |format|
         format.js { render layout: false }
@@ -42,7 +43,7 @@ class App::Pages::ProfileController < ApplicationController
       flash[:notice] = t('shared.success')
     end
 
-    redirect_to app_profile_index_path
+    redirect_to request.referer
   end
 
   private
@@ -52,27 +53,11 @@ class App::Pages::ProfileController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:avatar, :name, :role, :lattes_url)
-  end
-
-  def resize_avatar
-    return unless profile_params['avatar']
-
-    acceptable_types = ['image/jpeg', 'image/png']
-    return unless acceptable_types.include?(profile_params['avatar'].content_type)
-
-    temp_path = profile_params['avatar'].tempfile.path
-
-    image = MiniMagick::Image.open(temp_path)
-    if image.height < image.width
-      diff = (image.width - image.height) / 2
-      image.crop "#{image.height}x#{image.height}+#{diff}+0"
+    if current_user.admin?
+      params.require(:profile).permit(:id, :avatar, :name, :role, :lattes_url)
     else
-      diff = (image.height - image.width) / 2
-      image.crop "#{image.width}x#{image.width}+0+#{diff}"
+      params.require(:profile).permit(:avatar, :name, :role, :lattes_url)
     end
-    image.resize '240x240'
-    image.write temp_path
   end
 
   def set_active_menu
@@ -80,6 +65,10 @@ class App::Pages::ProfileController < ApplicationController
   end
 
   def set_profile
-    @profile = current_user.profile
+    @profile = admin? ? Profile.find(params[:id] || params[:profile_id]) : current_user.profile
+  end
+
+  def admin?
+    current_user.admin? && (params[:id] || params[:profile_id])
   end
 end

@@ -70,6 +70,6 @@ class App::Pages::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, roles: [])
+    params.require(:user).permit(:email, :password, roles: [], profile_attributes: {})
   end
 end

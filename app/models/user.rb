@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :confirmable, :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile, dependent: :destroy
+  accepts_nested_attributes_for :profile, update_only: true
 
   serialize :roles, Array
 

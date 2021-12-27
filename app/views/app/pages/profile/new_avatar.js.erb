@@ -1,1 +1,1 @@
-$("#modal-body").html("<%= escape_javascript(render partial: 'avatar_form', locals: { profile: current_user.profile, title: "#{t('shared.new')} #{Project.human_attribute_name('avatar')}" } ) %>");
+$("#modal-body").html("<%= escape_javascript(render partial: 'avatar_form', locals: { profile: @profile, title: "#{t('shared.new')} #{Project.human_attribute_name('avatar')}" } ) %>");

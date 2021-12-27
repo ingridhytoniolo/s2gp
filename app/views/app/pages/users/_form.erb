@@ -20,6 +20,20 @@
       <% end %>
     </div>
   </div>
+  <%= f.fields_for :profile do |p| %>
+    <div class="field">
+      <%= p.label :name %>
+      <%= p.text_field :name, required: true %>
+    </div>
+    <div class="field">
+      <%= p.label :role %>
+      <%= p.select :role, Profile.roles.keys.map {|r| [Profile.human_attribute_name("roles.#{r}"), r]}, { include_blank: true } %>
+    </div>
+    <div class="field">
+      <%= p.label :lattes_url %>
+      <%= p.text_field :lattes_url %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.button t('shared.cancel'), type: :button, class: 'w-full sm:w-1/2', onClick: 'resetModal()',
         data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>

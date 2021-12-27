@@ -8,15 +8,34 @@
 <table class="table-auto w-full">
   <thead>
     <tr>
+      <th class="w-1/12"><%= t('shared.avatar') %></th>
       <th><%= t('shared.email') %></th>
       <th class="hidden md:table-cell"><%= t('shared.roles') %></th>
-      <th class="hidden md:table-cell w-3/12"><%= t('shared.created_at') %></th>
+      <th class="hidden lg:table-cell"><%= t('shared.name') %></th>
+      <th class="hidden lg:table-cell w-3/12"><%= t('shared.created_at') %></th>
       <th class="w-1/12"><%= t('shared.edit') %></th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td>
+          <% if user.profile.avatar.attached? %>
+            <span class="inline-flex justify-center">
+              <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>'), app_profile_delete_avatar_path(user.profile), data: { confirm: t('shared.are_you_sure') }, method: :delete %>
+            </span>
+          <% else %>
+            <% if user.profile.name %>
+              <span class="inline-flex justify-center">
+                <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>'), app_profile_new_avatar_path(user.profile), class: 'open-modal', remote: true %>
+              </span>
+            <% end %>
+          <% end %>
+        </td>
         <td class="text-left">
           <%= user[:email] %>
           <% if user[:unconfirmed_email].present? %>
@@ -31,7 +50,10 @@
             <span class="badge"><%= r %></span>
           <% end %>
         </td>
-        <td class="hidden md:table-cell">
+        <td class="hidden lg:table-cell text-left">
+          <%= user.profile.name %>
+        </td>
+        <td class="hidden lg:table-cell">
           <%= user[:created_at] %>
         </td>
         <td>
