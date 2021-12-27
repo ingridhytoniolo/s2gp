@@ -5,17 +5,27 @@
     <h2><%= t('pages.team.sub_title') %></h2>
   </div>
   <div class="flex flex-wrap justify-center text-center">
-    <% @team.each do |member| %>
+    <% @team.each do |profile| %>
       <div class="p-4 w-full lg:w-1/4 md:w-1/2">
         <div class="flex flex-col">
-          <img alt="team" class="rounded-full w-48 h-48 object-cover object-center mx-auto mb-4 bg-gray-100" src="<%= member[:photo_url] %>">
-          <p class="mb-1"><%= member[:name] %></p>
-          <p class="mb-2 text-sm text-gray-600"><%= member[:role] %></p>
-          <span class="inline-flex justify-center">
-            <a class="ml-2 px-2 py-1 rounded text-gray-600 text-xs uppercase font-semibold bg-gray-100" href="<%= member[:lattes_url] %>" target="_new">
-              Lattes
-            </a>
-          </span>
+          <% if profile.avatar.attached? %>
+            <%= image_tag profile.avatar, class: 'rounded-full w-48 h-48 object-cover object-center mx-auto mb-4 bg-gray-100' %>
+          <% else %>
+            <div class="rounded-full w-48 h-48 object-cover object-center mx-auto mb-2 flex justify-center items-center text-gray-300 bg-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+          <% end %>
+          <p class="mb-1"><%= profile.name %></p>
+          <p class="mb-2 text-sm text-gray-600"><%= Profile.human_attribute_name("roles.#{profile.role}") %></p>
+          <% if profile.lattes_url.present? %>
+            <span class="inline-flex justify-center">
+              <a class="ml-2 px-2 py-1 rounded text-gray-600 text-xs uppercase font-semibold bg-gray-100" href="<%= profile.lattes_url %>" target="_new">
+                Lattes
+              </a>
+            </span>
+          <% end %>
         </div>
       </div>
     <% end %>

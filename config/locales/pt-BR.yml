@@ -12,6 +12,7 @@ pt-BR:
         description: Descrição
         end_at: Fim
         main_goal: Objetivo
+        members: Membros
         start_at: Início
         status: Status
         title: Título
@@ -49,6 +50,10 @@ pt-BR:
         admin: Admin
     errors:
       models:
+        project:
+          attributes:
+            start_at:
+              blank: não informado
         user:
           attributes:
             confirmation_token:

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   get '/team', to: 'pages#team'
-  get '/projects', to: 'pages#projects'
+  resources :projects, only: [:index, :show]
   get '/contact', to: 'pages#contact'
 
   namespace :app do
