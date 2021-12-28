@@ -10,10 +10,10 @@
 <table class="table-auto w-full">
   <thead>
     <tr>
-      <th class="w-1/12"><%= t('shared.status') %></th>
-      <th><%= t('shared.title') %></th>
-      <th class="hidden md:table-cell w-2/12"><%= t('shared.start_at') %></th>
-      <th class="hidden md:table-cell w-2/12"><%= t('shared.end_at') %></th>
+      <th class="w-1/12"><%= Project.human_attribute_name('status') %></th>
+      <th><%= Project.human_attribute_name('title') %></th>
+      <th class="hidden md:table-cell w-2/12"><%= Project.human_attribute_name('start_at') %></th>
+      <th class="hidden md:table-cell w-2/12"><%= Project.human_attribute_name('end_at') %></th>
       <th class="w-1/12"><%= t('shared.view') %></th>
     </tr>
   </thead>
