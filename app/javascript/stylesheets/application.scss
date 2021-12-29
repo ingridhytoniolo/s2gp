@@ -53,6 +53,9 @@ button.primary:focus,
 button.primary:hover {
   @apply text-white bg-gray-800 outline-none;
 }
+.button-link.disabled {
+  @apply text-white bg-gray-400;
+}
 button.primary:disabled {
   @apply text-white bg-gray-600;
 }

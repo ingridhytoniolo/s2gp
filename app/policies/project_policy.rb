@@ -28,4 +28,8 @@ class ProjectPolicy < ApplicationPolicy
   def update?
     user.admin?
   end
+
+  def join?
+    true
+  end
 end

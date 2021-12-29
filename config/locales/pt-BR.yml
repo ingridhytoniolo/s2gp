@@ -111,9 +111,12 @@ pt-BR:
     created_at: Data de cadastro
     edit: Editar
     email: E-mail
+    enter: Entrar
+    error: Não foi possível realizar a ação
     join: Participar
     name: Nome
     new: Adicionar
+    pending: Pendente
     roles: Funções
     submit: Enviar
     success: Ação realizada com sucesso

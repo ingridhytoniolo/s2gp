@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       get :new_avatar, to: 'pages/profile#new_avatar'
       delete :delete_avatar, to: 'pages/profile#delete_avatar'
     end
-    resources :projects, controller: 'pages/projects'
+    resources :projects, controller: 'pages/projects' do
+      post :join, to: 'pages/projects#join'
+    end
     get '/settings', to: 'pages/settings#index'
     resources :users, controller: 'pages/users'
   end

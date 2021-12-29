@@ -2,7 +2,7 @@ class App::Pages::ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_project
   before_action :set_active_menu
-  before_action :set_project, only: [:show, :edit, :update]
+  before_action :set_project, only: [:show, :edit, :update, :join]
 
   layout 'app'
 
@@ -54,6 +54,18 @@ class App::Pages::ProjectsController < ApplicationController
     end
   end
 
+  def join
+    member = @project.members.new(profile_id: current_user.profile.id)
+    
+    if member.save
+      flash[:notice] = t('shared.success')
+    else
+      flash[:alert] = t('shared.error')
+    end
+
+    redirect_to request.referer
+  end
+
   private
 
   def authorize_project
@@ -82,6 +94,6 @@ class App::Pages::ProjectsController < ApplicationController
   end
 
   def set_project
-    @project = Project.find(params[:id])
+    @project = Project.find(params[:id] || params[:project_id])
   end
 end
