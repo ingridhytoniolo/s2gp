@@ -35,7 +35,6 @@
     <% end %>
     <%= yield %>
     <script type="application/javascript">
-      $(':input').inputmask();
       $('form').submit(function() {
         $('input').blur();
       });
