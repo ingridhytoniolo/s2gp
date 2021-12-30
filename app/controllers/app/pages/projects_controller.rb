@@ -43,6 +43,7 @@ class App::Pages::ProjectsController < ApplicationController
 
   def update
     resize_avatar
+    update_params
 
     if @project.update(project_params)
       flash[:notice] = t('shared.success')
@@ -73,7 +74,7 @@ class App::Pages::ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:avatar, :title, :main_goal, :description, :start_at, :end_at)
+    params.require(:project).permit(:status, :avatar, :title, :main_goal, :description, :start_at, :end_at)
   end
 
   def resize_avatar
@@ -95,5 +96,10 @@ class App::Pages::ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:id] || params[:project_id])
+  end
+
+  def update_params
+    params['project']['start_at'] = Date.strptime(params['project']['start_at'], '%m/%Y') if params['project']['start_at'].present?
+    params['project']['end_at'] = Date.strptime(params['project']['end_at'], '%m/%Y') if params['project']['end_at'].present?
   end
 end
