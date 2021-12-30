@@ -39,7 +39,7 @@
     }
   ]
 %>
-<ul class="sidebar-menu">
+<ul class="sidebar-menu px-4">
   <% menu.each do |i| %>
     <% next if i[:admin] && !current_user.admin? %>
     <a href="<%= i[:url] %>">

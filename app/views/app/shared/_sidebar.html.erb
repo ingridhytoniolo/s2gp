@@ -1,11 +1,21 @@
-<div class="hidden md:block flex-none w-64 p-4 overflow-scroll bg-white shadow-md">
-  <div class="flex items-center">
+<div class="hidden md:block relative flex-none w-64 overflow-scroll bg-white shadow-md">
+  <div class="flex items-center p-4 pb-0">
     <%= link_to raw("<span class='text-center text-black text-2xl font-semibold'>#{@group[:name] || 'S2GP'}</span>"), app_path %>
-    <div class="flex flex-auto justify-end">
-      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-        </svg>'), destroy_user_session_path, method: :delete, class: 'ml-3' %>
-    </div>
   </div>
   <%= render 'app/shared/menu' %>
+  <div class="absolute bottom-3 w-full px-4">
+    <div class="flex items-center">
+      <div>
+        <% if current_user.profile.name.present? %>
+          <p class="w-44 truncate overflow-hidden"><%= current_user.profile.name %></p>
+        <% end %>
+        <p class="w-44 truncate overflow-hidden text-sm text-gray-400"><%= current_user.email %></p>
+      </div>
+      <div class="flex flex-auto justify-end">
+        <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>'), destroy_user_session_path, method: :delete, class: 'ml-3' %>
+      </div>
+    </div>
+  </div>
 </div>
