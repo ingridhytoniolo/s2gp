@@ -39,6 +39,8 @@ fr:
               confirmation: ne correspond pas au mot de passe
     models:
       user: Utilisateur
+      profile: Profil
+      project: Projet
   helpers:
     failure:
       unauthorized: Vous n'êtes pas autorisé à effectuer cette action.
@@ -67,6 +69,11 @@ fr:
       title: Contact
     index:
       title: Début
+    projects:
+      buttons:
+        open: Ouvrir le projet
+      sub_title: Voir les projets du groupe
+      title: Projets
     team: 
       sub_title: Chercheurs, collaborateurs et étudiants
       title: Équipe

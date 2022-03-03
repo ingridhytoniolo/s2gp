@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
     resources :projects, controller: 'pages/projects' do
       post :join, to: 'pages/projects#join'
+      get :dashboard, to: 'pages/projects#dashboard'
     end
     get '/settings', to: 'pages/settings#index'
     resources :users, controller: 'pages/users'

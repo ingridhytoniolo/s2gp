@@ -39,6 +39,8 @@ en:
               confirmation: does not equal password
     models:
       user: Usuário
+      profile: Profile
+      project: Project
   helpers:
     failure:
       unauthorized: You are not authorized to perform this action.
@@ -67,6 +69,11 @@ en:
       title: Contact
     index:
       title: Home
+    projects:
+      buttons:
+        open: Open project
+      sub_title: See the group's projects
+      title: Projects
     team: 
       sub_title: Researchers, collaborators and students
       title: Team

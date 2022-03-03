@@ -9,12 +9,12 @@
   <div class="flex flex-auto justify-end">
     <% if current_user.admin? %>
       <%= link_to t('shared.edit'), edit_app_project_path(@project), class: 'open-modal button-link', remote: true %>
-      <%= link_to t('shared.enter'), '#', class: 'button-link primary' %>
+      <%= link_to t('shared.enter'), app_project_dashboard_path(@project), class: 'button-link primary' %>
     <% else %>
       <% if @project.created? %>
         <% case @project.member_status(current_user.profile.id) %>
         <% when 'accepted' %>
-          <%= link_to t('shared.enter'), '#', class: 'button-link primary' %>
+          <%= link_to t('shared.enter'), app_project_dashboard_path(@project), class: 'button-link primary' %>
         <% when 'pending' %>
           <span class="button-link disabled"><%= t('shared.pending') %></span>
         <% when nil %>

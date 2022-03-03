@@ -1,0 +1,11 @@
+<%= render 'app/shared/header' %>
+<h2 class="subtitle">
+  <%= link_to raw("<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 17l-5-5m0 0l5-5m-5 5h12' />
+      </svg> #{t('pages.app.pages.projects.title')}"), app_projects_path, class: 'flex flex-row items-center' %>
+</h2>
+<div class="flex items-end mb-4">
+  <h1><%= @project.title %></h1>
+</div>
+<div class="max-w-screen-lg mx-auto flex flex-wrap">
+</div>

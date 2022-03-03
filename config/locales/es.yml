@@ -39,6 +39,8 @@ es:
               confirmation: no es igual a contraseña
     models:
       user: Usuário
+      profile: Perfil
+      project: Proyecto
   helpers:
     failure:
       unauthorized: No está autorizado para realizar esta acción.
@@ -67,6 +69,11 @@ es:
       title: Contacto
     index:
       title: Comienzo
+    projects:
+      buttons:
+        open: Abre el proyecto
+      sub_title: Ver los proyectos del grupo
+      title: Proyectos
     team: 
       sub_title: Investigadores, colaboradores y estudiantes
       title: Equipo
