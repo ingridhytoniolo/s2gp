@@ -22,6 +22,7 @@ class App::Pages::ProjectsController < ApplicationController
 
   def create
     resize_avatar
+    update_params
   
     @project = Project.new(project_params)
 
