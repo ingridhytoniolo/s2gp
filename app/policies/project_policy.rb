@@ -34,6 +34,6 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def dashboard?
-    user.admin? # is user a project member?
+    true
   end
 end

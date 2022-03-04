@@ -21,6 +21,10 @@ class Project < ApplicationRecord
     members.find_by(profile_id: profile_id)&.status
   end
 
+  def researcher?(profile_id)
+    members.find_by(profile_id: profile_id)&.status == :researcher
+  end
+
   private
 
   def generate_slug

@@ -3,6 +3,7 @@ class App::Pages::ProjectsController < ApplicationController
   before_action :authorize_project
   before_action :set_active_menu
   before_action :set_project, only: [:show, :edit, :update, :join, :dashboard]
+  before_action :authorize_member, only: [:dashboard]
 
   layout 'app'
 
@@ -71,6 +72,13 @@ class App::Pages::ProjectsController < ApplicationController
   def dashboard; end
 
   private
+
+  def authorize_member
+    return if current_user.admin? || @project.researcher?(current_user.profile.id)
+ 
+    flash[:alert] = t('shared.error')
+    redirect_to app_project_path(@project)
+  end
 
   def authorize_project
     authorize :project
