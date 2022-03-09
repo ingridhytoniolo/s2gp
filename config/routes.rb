@@ -15,7 +15,14 @@ Rails.application.routes.draw do
     end
     resources :projects, controller: 'pages/projects' do
       post :join, to: 'pages/projects#join'
-      get :dashboard, to: 'pages/projects#dashboard'
+      
+      get :dashboard, to: 'pages/active_project#dashboard'
+      get :members, to: 'pages/active_project#members'
+      resources :members, controller: 'pages/active_project' do
+        get '/', to: 'pages/active_project#show_member'
+        patch '/', to: 'pages/active_project#update_member'
+        get :edit, to: 'pages/active_project#edit_member'
+      end
     end
     get '/settings', to: 'pages/settings#index'
     resources :users, controller: 'pages/users'

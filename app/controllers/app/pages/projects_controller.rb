@@ -2,7 +2,7 @@ class App::Pages::ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_project
   before_action :set_active_menu
-  before_action :set_project, only: [:show, :edit, :update, :join, :dashboard]
+  before_action :set_project, only: [:show, :edit, :update, :join]
   before_action :authorize_member, only: [:dashboard]
 
   layout 'app'
@@ -68,8 +68,6 @@ class App::Pages::ProjectsController < ApplicationController
 
     redirect_to request.referer
   end
-
-  def dashboard; end
 
   private
 

@@ -1,0 +1,23 @@
+<%= form_with(model: [ :app, :project, member ], url: { action: action }, local: false, id: 'modal-form') do |f| %>
+  <h1 class="text-xl font-semibold"><%= title %></h1>
+  <div id="modal-errors"></div>
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select :status, Member.statuses.keys.map {|s| [Member.human_attribute_name("status.#{s}"), s]} %>
+  </div>
+  <div class="field">
+    <%= f.label :role %>
+    <%= f.select :role, Member.roles.keys.map {|r| [Member.human_attribute_name("roles.#{r}"), r]}, { include_blank: true } %>
+  </div>
+  <div class="actions">
+    <%= f.button t('shared.cancel'), type: :button, class: 'w-full sm:w-1/2', onClick: 'resetModal()',
+        data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+    <%= f.button t('shared.submit'), type: :submit, class: 'primary w-full sm:w-1/2',
+        data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+  </div>
+<% end %>
+<script type="application/javascript">
+  $(document).ready(function() {
+    Inputmask().mask(document.querySelectorAll('input'));
+  });
+</script>

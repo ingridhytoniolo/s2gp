@@ -12,7 +12,11 @@ class Profile < ApplicationRecord
   validates :user_id, presence: true, uniqueness: true
 
   scope :actives, -> {
-    joins(:members).where(members: { status: 'accepted' })
+    joins(:members).where(members: { status: 'accepted' }).group(:id)
+  }
+
+  scope :not_refused, -> {
+    joins(:members).where.not(members: { status: 'refused' }).group(:id)
   }
 
   scope :by_roles, -> {

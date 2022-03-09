@@ -1,0 +1,46 @@
+<%= render 'subheader' %>
+<div class="max-w-screen-lg mx-auto flex flex-wrap">
+  <%= render 'menu' %>
+  <table class="table-auto w-full">
+    <thead>
+      <tr>
+        <th><%= t('shared.name') %></th>
+        <th class="w-2/12"><%= t('shared.role') %></th>
+        <% if current_user.admin? %>
+          <th class="w-1/12"><%= t('shared.edit') %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @members.each do |member| %>
+        <tr>
+          <td class="text-left">
+            <%= member.profile.name %>
+            <% if member.status == 'pending' %>
+              <span class="badge badge-red">
+                <%= Member.human_attribute_name("statuses.pending") %>
+              </span>
+            <% end %>
+          </td>
+          <td>
+            <% if member.status == 'accepted' && member.role %>
+              <span class="badge">
+                <%= Profile.human_attribute_name("roles.#{member.role}") %>
+              </span>
+            <% end %>
+          </td>
+          <% if current_user.admin? %>
+            <td>
+              <a href="<%= edit_app_project_member_path(@project, member) %>" class="open-modal appearance-none flex justify-center" data-remote="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+              </a>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= render 'app/shared/modal' %>

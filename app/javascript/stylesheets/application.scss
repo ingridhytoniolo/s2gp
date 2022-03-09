@@ -127,6 +127,21 @@ table {
   }
 }
 
+.tabs {
+  @apply flex w-full mt-2 mb-4 border-b-2 border-gray-100;
+  
+  a {
+    @apply sm:px-6 py-3 w-1/2 sm:w-auto inline-flex items-center border-b-2 border-transparent leading-none text-gray-400 hover:text-gray-800;
+  }
+  a.active {
+    @apply border-gray-400 text-gray-600;
+  }
+}
+
+.mobile-tabs {
+  @apply mb-4;
+}
+
 .sidebar-menu {
   @apply mt-8;
 

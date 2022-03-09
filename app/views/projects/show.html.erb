@@ -56,7 +56,7 @@
                 </div>
               <% end %>
               <p class="mb-1 text-sm"><%= member.profile.name %></p>
-              <p class="mb-2 text-sm text-gray-600"><%= Profile.human_attribute_name("roles.#{member.role}") %></p>
+              <p class="mb-2 text-sm text-gray-600"><%= Profile.human_attribute_name("roles.#{member.role}") if member.role %></p>
             </div>
           <% end %>
         </div>
