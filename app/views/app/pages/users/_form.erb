@@ -26,10 +26,6 @@
       <%= p.text_field :name, required: true %>
     </div>
     <div class="field">
-      <%= p.label :role %>
-      <%= p.select :role, Profile.roles.keys.map {|r| [Profile.human_attribute_name("roles.#{r}"), r]}, { include_blank: true } %>
-    </div>
-    <div class="field">
       <%= p.label :lattes_url %>
       <%= p.text_field :lattes_url %>
     </div>

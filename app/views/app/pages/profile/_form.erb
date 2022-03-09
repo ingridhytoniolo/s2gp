@@ -6,10 +6,6 @@
     <%= f.text_field :name, required: true %>
   </div>
   <div class="field">
-    <%= f.label :role %>
-    <%= f.select :role, Profile.roles.keys.map {|r| [Profile.human_attribute_name("roles.#{r}"), r]}, { include_blank: true } %>
-  </div>
-  <div class="field">
     <%= f.label :lattes_url %>
     <%= f.text_field :lattes_url %>
   </div>
