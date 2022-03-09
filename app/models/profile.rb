@@ -1,6 +1,4 @@
 class Profile < ApplicationRecord
-  enum role: { researcher: 'researcher', student: 'student' }
-
   has_one_attached :avatar
 
   has_many :members
@@ -12,16 +10,16 @@ class Profile < ApplicationRecord
   validates :user_id, presence: true, uniqueness: true
 
   scope :actives, -> {
-    joins(:members).where(members: { status: 'accepted' }).group(:id)
+    joins(:members).where(members: { status: 'accepted' }).group(:id).order(:name)
   }
 
   scope :not_refused, -> {
-    joins(:members).where.not(members: { status: 'refused' }).group(:id)
+    joins(:members).where.not(members: { status: 'refused' }).group(:id).order(:name)
   }
 
-  scope :by_roles, -> {
-    order(Arel.sql("(CASE WHEN profiles.role = 'researcher' THEN 0 ELSE 1 END)"), :name)
-  }
+  def main_role
+    members.by_roles.first.try(:role)
+  end
 
   private
 

@@ -18,7 +18,7 @@
             </div>
           <% end %>
           <p class="mb-1"><%= profile.name %></p>
-          <p class="mb-2 text-sm text-gray-600"><%= Profile.human_attribute_name("roles.#{profile.role}") if profile.role %></p>
+          <p class="mb-2 text-sm text-gray-600"><%= Profile.human_attribute_name("roles.#{profile.main_role}") if profile.main_role %></p>
           <% if profile.lattes_url.present? %>
             <span class="inline-flex justify-center">
               <a class="ml-2 px-2 py-1 rounded text-gray-600 text-xs uppercase font-semibold bg-gray-100" href="<%= profile.lattes_url %>" target="_new">

@@ -9,6 +9,6 @@ class Member < ApplicationRecord
   validates :project_id, presence: true
 
   scope :by_roles, -> {
-    joins(:profile).order(Arel.sql("(CASE WHEN members.role = 'researcher' THEN 0 ELSE 1 END)"), 'profiles.name')
+    order(Arel.sql("(CASE WHEN role = 'researcher' THEN 0 WHEN role = 'student' THEN 1 ELSE 2 END)"))
   }
 end
