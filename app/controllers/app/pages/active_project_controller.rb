@@ -18,7 +18,6 @@ class App::Pages::ActiveProjectController < ApplicationController
 
   def members
     @active_submenu = 'members'
-    @members = @project.members.not_refused
   end
 
   def show_member; end

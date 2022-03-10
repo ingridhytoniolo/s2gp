@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @members.not_refused.each do |member| %>
+      <% @project.members.each do |member| %>
         <tr>
           <td>
             <% if member.profile.avatar.attached? %>
@@ -36,8 +36,12 @@
                 <%= Profile.human_attribute_name("roles.#{member.role}") %>
               </span>
             <% elsif member.status == 'pending' %>
-              <span class="badge badge-red">
+              <span class="badge badge-yellow">
                 <%= Member.human_attribute_name("statuses.pending") %>
+              </span>
+            <% elsif member.status == 'refused' %>
+              <span class="badge badge-red">
+                <%= Member.human_attribute_name("statuses.refused") %>
               </span>
             <% end %>
           </td>

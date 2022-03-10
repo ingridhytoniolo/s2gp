@@ -3,7 +3,7 @@
   <div id="modal-errors"></div>
   <div class="field">
     <%= f.label :status %>
-    <%= f.select :status, Member.statuses.keys.map {|s| [Member.human_attribute_name("status.#{s}"), s]} %>
+    <%= f.select :status, Member.statuses.keys.map {|s| [Member.human_attribute_name("statuses.#{s}"), s]} %>
   </div>
   <div class="field">
     <%= f.label :role %>

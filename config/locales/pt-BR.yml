@@ -1,9 +1,15 @@
 pt-BR:
   activerecord:
     attributes:
+      member:
+        role: Função
+      member/roles:
+        researcher: Pesquisador
+        student: Aluno
       member/statuses:
         accepted: Aceito
         pending: Pendente
+        refused: Rejeitado
       profile:
         lattes_url: Currículo Lattes
         name: Nome
