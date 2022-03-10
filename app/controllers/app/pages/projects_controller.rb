@@ -58,10 +58,14 @@ class App::Pages::ProjectsController < ApplicationController
   end
 
   def join
-    member = @project.members.new(profile_id: current_user.profile.id)
-    
-    if member.save
-      flash[:notice] = t('shared.success')
+    if @project.can_join?(current_user.profile.id)
+      member = @project.members.new(profile_id: current_user.profile.id)
+
+      if member.save
+        flash[:notice] = t('shared.success')
+      else
+        flash[:alert] = t('shared.error')
+      end
     else
       flash[:alert] = t('shared.error')
     end

@@ -86,6 +86,10 @@ pt-BR:
         dashboard:
           title: Dashboard
         profile:
+          labels:
+            complete_profile: Completar perfil
+          messages:
+            incomplete_profile: Complete o seu perfil para participar dos projetos
           title: Perfil
         projects:
           title: Projetos
@@ -111,6 +115,7 @@ pt-BR:
       title: Equipe
   shared:
     are_you_sure: Tem certeza?
+    avatar: Avatar
     cancel: Cancelar
     created_at: Data de cadastro
     edit: Editar

@@ -1,4 +1,9 @@
 <%= render 'app/shared/header' %>
 <div class="flex items-center mb-4">
-  <h1><%= t("pages.app.pages.dashboard.title") %></h1>
+  <h1><%= t('pages.app.pages.dashboard.title') %></h1>
+</div>
+<div class="max-w-screen-lg mx-auto flex flex-wrap">
+  <% if current_user.profile.name.nil? %>
+    <%= alert_box(:warning, t('pages.app.pages.profile.messages.incomplete_profile'), t('pages.app.pages.profile.labels.complete_profile'), app_profile_index_path) %>
+  <% end %>
 </div>
