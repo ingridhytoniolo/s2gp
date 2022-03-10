@@ -21,7 +21,7 @@ h2 {
   @apply mb-2 text-xl text-gray-400 font-medium;
 }
 h2.subtitle {
-  @apply text-xs text-gray-400 tracking-widest font-medium uppercase mb-1;
+  @apply flex flex-none text-xs text-gray-400 tracking-widest font-medium uppercase mb-1;
 }
 
 .alert {
