@@ -26,8 +26,6 @@ Rails.application.routes.draw do
         patch '/', to: 'pages/active_project#member_update'
         get :edit, to: 'pages/active_project#member_edit'
       end
-      get :news, to: 'pages/active_project#news'
-      get :notices, to: 'pages/active_project#notices'
       get :resources, to: 'pages/active_project#resources'
     end
     get '/settings', to: 'pages/settings#index'

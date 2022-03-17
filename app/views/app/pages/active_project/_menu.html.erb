@@ -3,17 +3,11 @@
     <a href="<%= app_project_dashboard_path(@project) %>" <%= 'class=active' if submenu == 'dashboard' %>>
       <%= t('pages.app.pages.dashboard.title') %>
     </a>
-    <a href="<%= app_project_news_path(@project) %>" <%= 'class=active' if submenu == 'news' %>>
-      <%= t('pages.app.pages.news.title') %>
-    </a>
     <a href="<%= app_project_activities_path(@project) %>" <%= 'class=active' if submenu == 'activities' %>>
       <%= t('pages.app.pages.activities.title') %>
     </a>
     <a href="<%= app_project_meetings_path(@project) %>" <%= 'class=active' if submenu == 'meetings' %>>
       <%= t('pages.app.pages.meetings.title') %>
-    </a>
-    <a href="<%= app_project_notices_path(@project) %>" <%= 'class=active' if submenu == 'notices' %>>
-      <%= t('pages.app.pages.notices.title') %>
     </a>
     <a href="<%= app_project_resources_path(@project) %>" <%= 'class=active' if submenu == 'resources' %>>
       <%= t('pages.app.pages.resources.title') %>
@@ -27,10 +21,8 @@
   <div class="mobile-tabs">
     <select name="submenu" id="submenu" onchange="redirect(this)">
       <option class="submenu-item" value="dashboard" data-href="<%= app_project_dashboard_path(@project) %>" <%= 'selected' if submenu == 'dashboard' %>><%= t('pages.app.pages.dashboard.title') %></option>
-      <option class="submenu-item" value="news" data-href="<%= app_project_news_path(@project) %>" <%= 'selected' if submenu == 'news' %>><%= t('pages.app.pages.news.title') %></option>
       <option class="submenu-item" value="activities" data-href="<%= app_project_activities_path(@project) %>" <%= 'selected' if submenu == 'activities' %>><%= t('pages.app.pages.activities.title') %></option>
       <option class="submenu-item" value="meetings" data-href="<%= app_project_meetings_path(@project) %>" <%= 'selected' if submenu == 'meetings' %>><%= t('pages.app.pages.meetings.title') %></option>
-      <option class="submenu-item" value="notices" data-href="<%= app_project_notices_path(@project) %>" <%= 'selected' if submenu == 'notices' %>><%= t('pages.app.pages.notices.title') %></option>
       <option class="submenu-item" value="resources" data-href="<%= app_project_resources_path(@project) %>" <%= 'selected' if submenu == 'resources' %>><%= t('pages.app.pages.resources.title') %></option>
       <option class="submenu-item" value="members" data-href="<%= app_project_members_path(@project) %>" <%= 'selected' if submenu == 'members' %>><%= t('pages.app.pages.members.title') %></option>
     </select>

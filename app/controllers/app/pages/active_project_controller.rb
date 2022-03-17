@@ -59,10 +59,6 @@ class App::Pages::ActiveProjectController < ApplicationController
 
   def members; end
 
-  def news; end
-
-  def notices; end
-
   def resources; end
 
   private
