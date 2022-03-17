@@ -1,10 +1,12 @@
 class Member < ApplicationRecord
   enum status: { pending: 'pending', accepted: 'accepted', refused: 'refused' }, _default: 'pending'
   enum role: { researcher: 'researcher', student: 'student' }
-
+  
   belongs_to :profile
   belongs_to :project
 
+  accepts_nested_attributes_for :profile
+  
   validates :profile_id, presence: true, uniqueness: { scope: [ :project_id ] }
   validates :project_id, presence: true
 

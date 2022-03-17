@@ -18,10 +18,11 @@ Rails.application.routes.draw do
       
       get :dashboard, to: 'pages/active_project#dashboard'
       get :members, to: 'pages/active_project#members'
-      resources :members, controller: 'pages/active_project' do
-        get '/', to: 'pages/active_project#show_member'
-        patch '/', to: 'pages/active_project#update_member'
-        get :edit, to: 'pages/active_project#edit_member'
+      post :members, to: 'pages/active_project#member_create'
+      get 'members/new', to: 'pages/active_project#member_new'
+      resources :members, only: [], controller: 'pages/active_project' do
+        patch '/', to: 'pages/active_project#member_update'
+        get :edit, to: 'pages/active_project#member_edit'
       end
     end
     get '/settings', to: 'pages/settings#index'

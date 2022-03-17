@@ -2,7 +2,7 @@ class App::Pages::ActiveProjectController < ApplicationController
   before_action :set_active_menu
   before_action :set_project
   before_action :authorize_member
-  before_action :set_member, only: [:edit_member, :show_member, :update_member]
+  before_action :set_member, only: [:member_edit, :member_update]
 
   layout 'app'
 
@@ -10,19 +10,41 @@ class App::Pages::ActiveProjectController < ApplicationController
     @active_submenu = 'dashboard'
   end
 
-  def edit_member
+  def member_create
+    params['member']['status'] = :accepted
+
+    @member = @project.members.new(member_params)
+
+    if @member.save
+      flash[:notice] = t('shared.success')
+      redirect_to app_project_members_path(@project)
+    else
+      respond_to do |format|
+        format.js { render layout: false }
+      end
+    end
+  end
+
+  def member_edit
     respond_to do |format|
       format.js { render layout: false }
     end
   end
 
-  def members
-    @active_submenu = 'members'
+  def member_new
+    @member = Member.new
+
+    current_members_profiles_ids = @project.members.pluck(:profile_id)
+    @profiles = Profile.where.not(id: current_members_profiles_ids).where.not(name: nil).map {|p| ["#{p.name} - #{p.user.email}", p.id]}
+  
+    respond_to do |format|
+      format.js { render layout: false }
+    end
   end
 
-  def show_member; end
+  def member_update
+    params['member']['status'] = :accepted
 
-  def update_member
     if @member.update(member_params)
       flash[:notice] = t('shared.success')
       redirect_to app_project_members_path(@project)
@@ -31,6 +53,10 @@ class App::Pages::ActiveProjectController < ApplicationController
         format.js { render layout: false }
       end
     end
+  end
+
+  def members
+    @active_submenu = 'members'
   end
 
   private
@@ -47,7 +73,7 @@ class App::Pages::ActiveProjectController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:status, :role)
+    params.require(:member).permit(:profile_id, :role, :status)
   end
 
   def set_active_menu
