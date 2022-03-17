@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     resources :projects, controller: 'pages/projects' do
       post :join, to: 'pages/projects#join'
       
+      get :activities, to: 'pages/active_project#activities'
       get :dashboard, to: 'pages/active_project#dashboard'
+      get :meetings, to: 'pages/active_project#meetings'
       get :members, to: 'pages/active_project#members'
       post :members, to: 'pages/active_project#member_create'
       get 'members/new', to: 'pages/active_project#member_new'
@@ -24,6 +26,9 @@ Rails.application.routes.draw do
         patch '/', to: 'pages/active_project#member_update'
         get :edit, to: 'pages/active_project#member_edit'
       end
+      get :news, to: 'pages/active_project#news'
+      get :notices, to: 'pages/active_project#notices'
+      get :resources, to: 'pages/active_project#resources'
     end
     get '/settings', to: 'pages/settings#index'
     resources :users, controller: 'pages/users'

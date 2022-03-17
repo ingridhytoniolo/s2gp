@@ -6,7 +6,11 @@ class App::Pages::ActiveProjectController < ApplicationController
 
   layout 'app'
 
+  def activities; end
+
   def dashboard; end
+
+  def meetings; end
 
   def member_create
     params['member']['status'] = :accepted
@@ -54,6 +58,12 @@ class App::Pages::ActiveProjectController < ApplicationController
   end
 
   def members; end
+
+  def news; end
+
+  def notices; end
+
+  def resources; end
 
   private
 

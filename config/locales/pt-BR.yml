@@ -89,8 +89,18 @@ pt-BR:
   pages:
     app:
       pages:
+        activities:
+          title: Atividades
         dashboard:
           title: Dashboard
+        news:
+          title: Notícias
+        meetings:
+          title: Reuniões
+        members:
+          title: Membros
+        notices:
+          title: Editais
         profile:
           labels:
             complete_profile: Completar perfil
@@ -99,6 +109,8 @@ pt-BR:
           title: Perfil
         projects:
           title: Projetos
+        resources:
+          title: Recursos
         settings:
           title: Configurações
         team:
