@@ -6,9 +6,7 @@ class App::Pages::ActiveProjectController < ApplicationController
 
   layout 'app'
 
-  def dashboard
-    @active_submenu = 'dashboard'
-  end
+  def dashboard; end
 
   def member_create
     params['member']['status'] = :accepted
@@ -55,9 +53,7 @@ class App::Pages::ActiveProjectController < ApplicationController
     end
   end
 
-  def members
-    @active_submenu = 'members'
-  end
+  def members; end
 
   private
 

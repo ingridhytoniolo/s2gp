@@ -1,9 +1,9 @@
 <div class="hidden lg:block w-full">
   <div class="tabs">
-    <a href="<%= app_project_dashboard_path(@project) %>" <%= @active_submenu == 'dashboard' ? 'class=active' : '' %>>
+    <a href="<%= app_project_dashboard_path(@project) %>" <%= submenu == 'dashboard' ? 'class=active' : '' %>>
       Dashboard
     </a>
-    <a href="<%= app_project_members_path(@project) %>" <%= @active_submenu == 'members' ? 'class=active' : '' %>>
+    <a href="<%= app_project_members_path(@project) %>" <%= submenu == 'members' ? 'class=active' : '' %>>
       Membros
     </a>
   </div>
@@ -11,8 +11,8 @@
 <div class="lg:hidden w-full">
   <div class="mobile-tabs">
     <select name="submenu" id="submenu" onchange="redirect(this)">
-      <option class="submenu-item" value="dashboard" data-href="<%= app_project_dashboard_path(@project) %>" <%= @active_submenu == 'dashboard' ? 'selected' : '' %>>Dashboard</option>
-      <option class="submenu-item" value="members" data-href="<%= app_project_members_path(@project) %>"  <%= @active_submenu == 'members' ? 'selected' : '' %>>Membros</option>
+      <option class="submenu-item" value="dashboard" data-href="<%= app_project_dashboard_path(@project) %>" <%= submenu == 'dashboard' ? 'selected' : '' %>>Dashboard</option>
+      <option class="submenu-item" value="members" data-href="<%= app_project_members_path(@project) %>"  <%= submenu == 'members' ? 'selected' : '' %>>Membros</option>
     </select>
   </div>
 </div>
