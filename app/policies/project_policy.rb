@@ -32,8 +32,4 @@ class ProjectPolicy < ApplicationPolicy
   def join?
     true
   end
-
-  def dashboard?
-    true
-  end
 end

@@ -1,6 +1,21 @@
 pt-BR:
   activerecord:
     attributes:
+      activity:
+        description: Descrição
+        end_at: Fim
+        participants: Participantes
+        priority: Prioridade
+        start_at: Início
+        status: Status
+      activity/priorities:
+        high: Alta
+        low: Baixa
+        medium: Média
+      activity/statuses:
+        created: Criada
+        done: Finalizada
+        started: Iniciada
       member:
         role: Função
       member/roles:
@@ -75,6 +90,7 @@ pt-BR:
             password_confirmation:
               confirmation: não é igual a senha
     models:
+      activity: Atividade
       user: Usuário
       member: Membro
       profile: Perfil
@@ -136,6 +152,8 @@ pt-BR:
     are_you_sure: Tem certeza?
     avatar: Avatar
     cancel: Cancelar
+    close: Fechar
+    create: Cadastrar
     created_at: Data de cadastro
     edit: Editar
     email: E-mail

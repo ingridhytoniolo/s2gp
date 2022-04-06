@@ -1,0 +1,50 @@
+<%= form_with(model: [ :app, :project, activity ], url: { action: action }, local: false, id: 'modal-form') do |f| %>
+  <h1 class="text-xl font-semibold"><%= title %></h1>
+  <div class="cols">
+    <div class="field w-1/2">
+      <%= f.label :status %>
+      <%= Activity.human_attribute_name("statuses.#{activity.status}") %>
+    </div>
+    <div class="field w-1/2">
+      <%= f.label :priority %>
+      <%= Activity.human_attribute_name("priorities.#{activity.priority}") %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= activity.description %>
+  </div>
+  <div class="cols">
+    <div class="field w-1/2">
+      <%= f.label :start_at %>
+      <%= activity.start_at&.strftime('%d/%m/%Y') %>
+    </div>
+    <div class="field w-1/2">
+      <%= f.label :end_at %>
+      <%= activity.end_at&.strftime('%d/%m/%Y') %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label 'participants[profile_ids]', Activity.human_attribute_name('participants') %>
+    <ul class="check-box grid grid-cols-2 gap-2">
+      <% activity.participants.by_name.each do |participant| %>
+        <li><div class="flex items-center gap-2">
+          <% if participant.profile.avatar.attached? %>
+            <%= image_tag participant.profile.avatar, class: 'rounded-full w-8 h-8 object-cover object-center bg-gray-100' %>
+          <% else %>
+            <div class="rounded-full w-8 h-8 object-cover object-center flex justify-center items-center text-gray-300 bg-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+          <% end %>
+          <div class="text-sm"><%= participant.profile.name %></div>
+        </div></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="actions justify-center">
+    <%= f.button t('shared.close'), type: :button, class: 'primary w-full sm:w-1/2 justify-center', onClick: 'resetModal()',
+        data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+  </div>
+<% end %>

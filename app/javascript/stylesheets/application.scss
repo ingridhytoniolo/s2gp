@@ -113,7 +113,7 @@ textarea {
   @apply block w-full p-3 mt-1 text-gray-700 bg-gray-50 border-2 border-gray-300 rounded;
 }
 input[type="checkbox"] {
-  @apply block p-2 mr-2 outline-none bg-gray-50 border-2 border-gray-300 rounded;
+  @apply p-2 mr-2 outline-none bg-gray-50 border-2 border-gray-300 rounded;
 }
 input[type="file"]:focus {
   @apply outline-none;
@@ -219,5 +219,17 @@ table {
   }
   .actions {
     @apply flex flex-col-reverse sm:flex-row sm:gap-4;
+  }
+}
+
+ul.check-box {
+  @apply py-2;
+
+  li {
+    @apply pb-2;
+
+    span {
+      @apply capitalize;
+    }
   }
 }

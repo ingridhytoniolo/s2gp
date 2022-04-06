@@ -13,8 +13,10 @@ class Member < ApplicationRecord
   scope :actives, -> {
     where(status: 'accepted')
   }
-
+  scope :by_name, -> {
+    includes(:profile).order('profiles.name')
+  }
   scope :by_roles, -> {
-    order(Arel.sql("(CASE WHEN role = 'researcher' THEN 0 WHEN role = 'student' THEN 1 ELSE 2 END)"))
+    order(Arel.sql("(CASE WHEN role = 'researcher' THEN 0 WHEN role = 'student' THEN 1 ELSE 2 END)")).by_name
   }
 end

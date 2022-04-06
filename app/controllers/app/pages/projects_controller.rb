@@ -8,7 +8,7 @@ class App::Pages::ProjectsController < ApplicationController
   layout 'app'
 
   def index
-    @projects = Project.find_by_sql("SELECT * FROM projects ORDER BY status = 'created' DESC, status = 'paused' DESC")
+    @projects = Project.by_status
   end
 
   def show; end
@@ -109,6 +109,9 @@ class App::Pages::ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:id] || params[:project_id])
+  rescue
+    flash[:alert] = t('shared.error')
+    redirect_to app_projects_path(@project)
   end
 
   def update_params

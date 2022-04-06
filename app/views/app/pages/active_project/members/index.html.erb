@@ -1,9 +1,9 @@
-<%= render 'subheader' %>
+<%= render 'app/pages/active_project/shared/subheader' %>
 <div class="max-w-screen-lg mx-auto flex flex-wrap">
-  <%= render partial: 'menu', locals: { submenu: 'members' } %>
+  <%= render partial: 'app/pages/active_project/shared/menu', locals: { submenu: 'members' } %>
   <div class="mb-4 flex flex-auto justify-end">
     <% if current_user.admin? || @project.researcher?(current_user.profile) %>
-      <%= link_to t('shared.add'), app_project_members_new_path(@project), class: 'open-modal button-link', remote: true %>
+      <%= link_to t('shared.add'), new_app_project_member_path(@project), class: 'open-modal button-link', remote: true %>
     <% end %>
   </div>
   <table class="table-auto w-full">
@@ -18,7 +18,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @project.members.each do |member| %>
+      <% @members.each do |member| %>
         <tr>
           <td>
             <% if member.profile.avatar.attached? %>
@@ -52,7 +52,7 @@
           </td>
           <% if current_user.admin? || @project.researcher?(current_user.profile) %>
             <td>
-              <a href="<%= app_project_member_edit_path(@project, member) %>" class="open-modal appearance-none flex justify-center" data-remote="true">
+              <a href="<%= edit_app_project_member_path(@project, member) %>" class="open-modal appearance-none flex justify-center" data-remote="true">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
