@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :activities, controller: 'pages/active_project/activities'
       resources :meetings, controller: 'pages/active_project/meetings'
       resources :members, controller: 'pages/active_project/members'
+      resources :news, controller: 'pages/active_project/news', only: [:index]
       resources :resources, controller: 'pages/active_project/resources'
     end
     get '/settings', to: 'pages/settings#index'
