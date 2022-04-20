@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       resources :news, controller: 'pages/active_project/news', only: [:index]
       resources :resources, controller: 'pages/active_project/resources'
     end
+    resources :resources, controller: 'pages/resources'
     get '/settings', to: 'pages/settings#index'
     resources :users, controller: 'pages/users'
   end

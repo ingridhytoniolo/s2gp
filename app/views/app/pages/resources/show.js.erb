@@ -1,0 +1,1 @@
+$("#modal-body").html("<%= escape_javascript(render partial: 'resource', locals: { action: 'show', resource: @resource, title: "#{t('activerecord.models.resource')}" } ) %>");

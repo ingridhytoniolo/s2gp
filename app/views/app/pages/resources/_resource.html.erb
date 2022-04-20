@@ -1,0 +1,33 @@
+<%= form_with(model: [ :app, :project, resource ], url: { action: action }, local: false, id: 'modal-form') do |f| %>
+  <h1 class="text-xl font-semibold"><%= title %></h1>
+  <div class="cols">
+    <div class="field w-1/2">
+      <%= f.label :kind %>
+      <%= Resource.human_attribute_name("kinds.#{resource.kind}") %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :name %>
+    <%= resource.name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= resource.description&.gsub(/\n/, '<br/>')&.html_safe %>
+  </div>
+  <% if resource.kind == 'financial' %>
+  <div class="cols">
+    <div class="field w-1/2">
+      <%= f.label :start_at %>
+      <%= resource.start_at&.strftime('%d/%m/%Y') %>
+    </div>
+    <div class="field w-1/2">
+      <%= f.label :end_at %>
+      <%= resource.end_at&.strftime('%d/%m/%Y') %>
+    </div>
+  </div>
+  <% end %>
+  <div class="actions justify-center">
+    <%= f.button t('shared.close'), type: :button, class: 'primary w-full sm:w-1/2 justify-center', onClick: 'resetModal()',
+        data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+  </div>
+<% end %>

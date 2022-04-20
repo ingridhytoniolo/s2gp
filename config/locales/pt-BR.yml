@@ -44,6 +44,16 @@ pt-BR:
         created: Criado
         done: Concluído
         paused: Pausado
+      resource:
+        code: Código
+        description: Descrição
+        end_at: Fim
+        kind: Tipo
+        name: Nome
+        start_at: Início
+      resource/kinds:
+        material: Material
+        financial: Finaceiro
       user:
         confirmation_sent_at: Confirmação enviada em
         confirmation_token: Token de confirmação
@@ -95,6 +105,7 @@ pt-BR:
       member: Membro
       profile: Perfil
       project: Projeto
+      resource: Recurso
   helpers:
     failure:
       unauthorized: Ação não permitida.
@@ -155,11 +166,13 @@ pt-BR:
     close: Fechar
     create: Cadastrar
     created_at: Data de cadastro
+    delete: Apagar
     edit: Editar
     email: E-mail
     enter: Entrar
     error: Não foi possível realizar a ação
     join: Participar
+    kind: Tipo
     name: Nome
     new: Adicionar
     pending: Pendente
