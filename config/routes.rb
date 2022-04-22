@@ -20,7 +20,11 @@ Rails.application.routes.draw do
       resources :meetings, controller: 'pages/active_project/meetings'
       resources :members, controller: 'pages/active_project/members'
       resources :news, controller: 'pages/active_project/news', only: [:index]
-      resources :resources, controller: 'pages/active_project/resources'
+      resources :resources, controller: 'pages/active_project/resources', only: [:index] do
+        post :remove, to: 'pages/active_project/resources#remove'
+      end
+      get '/resources/add', to: 'pages/active_project/resources#add'
+      post '/resources/associate', to: 'pages/active_project/resources#associate'
     end
     resources :resources, controller: 'pages/resources'
     get '/settings', to: 'pages/settings#index'

@@ -1,0 +1,19 @@
+<%= form_tag(action, id: 'modal-form') do %>
+  <h1 class="text-xl font-semibold"><%= title %></h1>
+  <div id="modal-errors"></div>
+  <div class="field">
+    <%= label_tag :resource_id, t('activerecord.models.resource') %>
+    <%= select_tag :resource_id, options_for_select(@available_resources), include_blank: true, required: true %>
+  </div>
+  <div class="actions">
+    <%= button_tag t('shared.cancel'), type: :button, class: 'w-full sm:w-1/2', onClick: 'resetModal()',
+        data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+    <%= button_tag t('shared.submit'), type: :submit, class: 'primary w-full sm:w-1/2',
+        data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+  </div>
+<% end %>
+<script type="application/javascript">
+  $(document).ready(function() {
+    Inputmask().mask(document.querySelectorAll('input'));
+  });
+</script>

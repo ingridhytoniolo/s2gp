@@ -30,6 +30,14 @@
     </div>
   </div>
   <% end %>
+  <div class="field">
+    <%= f.label :projects %>
+    <ul style="list-style-type: circle; list-style-position: inside;">
+      <% resource.projects.each do |project| %>
+        <li><%= link_to project.title, app_project_path(project) %></li>
+      <% end %>
+    </ul>
+  </div>
   <div class="actions justify-center">
     <%= f.button t('shared.close'), type: :button, class: 'primary w-full sm:w-1/2 justify-center', onClick: 'resetModal()',
         data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
