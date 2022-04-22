@@ -101,11 +101,15 @@ pt-BR:
               confirmation: não é igual a senha
     models:
       activity: Atividade
-      user: Usuário
+      announcements: Edital
+      event: Evento
+      meeting: Reunião
       member: Membro
+      news: Notícia
       profile: Perfil
       project: Projeto
       resource: Recurso
+      user: Usuário
   helpers:
     failure:
       unauthorized: Ação não permitida.
@@ -116,18 +120,20 @@ pt-BR:
   pages:
     app:
       pages:
+        announcements:
+          title: Editais
         activities:
           title: Atividades
         dashboard:
           title: Dashboard
+        events:
+          title: Eventos
         news:
           title: Notícias
         meetings:
           title: Reuniões
         members:
           title: Membros
-        notices:
-          title: Editais
         profile:
           labels:
             complete_profile: Completar perfil
@@ -140,6 +146,8 @@ pt-BR:
           title: Recursos
         settings:
           title: Configurações
+        site: 
+          title: Site
         team:
           title: Equipe
         users:
