@@ -6,6 +6,10 @@
       <%= f.label :kind %>
       <%= f.select :kind, Resource.kinds.keys.map {|s| [Resource.human_attribute_name("kinds.#{s}"), s]}, { include_blank: true }, required: true %>
     </div>
+    <div class="field w-1/2">
+      <%= f.label :code %>
+      <%= f.text_field :code %>
+    </div>
   </div>
   <div class="field">
     <%= f.label :name %>

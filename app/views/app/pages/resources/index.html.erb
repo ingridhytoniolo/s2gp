@@ -2,7 +2,9 @@
 <div class="flex items-center mb-4">
   <h1><%= t("pages.app.pages.resources.title") %></h1>
   <div class="flex flex-auto justify-end">
-    <%= link_to t('shared.new'), new_app_resource_path, class: 'open-modal button-link', remote: true %>
+    <% if current_user.admin? || current_user.researcher? %>
+      <%= link_to t('shared.new'), new_app_resource_path, class: 'open-modal button-link', remote: true %>
+    <% end %>
   </div>
 </div>
 <div class="max-w-screen-md mx-auto flex flex-wrap">

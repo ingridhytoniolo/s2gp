@@ -5,6 +5,10 @@
       <%= f.label :kind %>
       <%= Resource.human_attribute_name("kinds.#{resource.kind}") %>
     </div>
+    <div class="field w-1/2">
+      <%= f.label :code %>
+      <%= resource.code %>
+    </div>
   </div>
   <div class="field">
     <%= f.label :name %>

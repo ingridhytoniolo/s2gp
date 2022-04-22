@@ -10,7 +10,7 @@ class ResourcePolicy < ApplicationPolicy
   end
 
   def show?
-    user.admin?
+    true
   end
 
   def new?
@@ -18,7 +18,7 @@ class ResourcePolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin?
+    user.admin? || user.researcher?
   end
 
   def edit?
@@ -26,6 +26,6 @@ class ResourcePolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin?
+    user.admin? || user.researcher?
   end
 end

@@ -11,4 +11,10 @@ class User < ApplicationRecord
   def admin?
     roles.include?('admin')
   end
+
+  def researcher?
+    return false unless profile
+
+    profile.members.find_by(status: 'accepted', role: 'researcher').present?
+  end
 end
