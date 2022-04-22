@@ -1,7 +1,7 @@
 class App::Pages::NewsController < ApplicationController
   before_action :authenticate_user!
   # before_action :authorize_news
-  # before_action :set_active_menu
+  before_action :set_active_menu
   # before_action :set_news, only: [:show, :edit, :update]
 
   layout 'app'
@@ -60,9 +60,9 @@ class App::Pages::NewsController < ApplicationController
   #   authorize :resource
   # end
 
-  # def set_active_menu
-  #   @active_menu = 'resources'
-  # end
+  def set_active_menu
+    @active_menu = 'news'
+  end
 
   # def set_resource
   #   @resource = Resource.find(params[:id])
