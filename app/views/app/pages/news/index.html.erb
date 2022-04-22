@@ -8,9 +8,14 @@
   </div>
 </div>
 <div class="max-w-screen-md mx-auto flex flex-wrap">
-  <% (1..5).each do %>
+  <% (1..5).each do |i| %>
   <div class="pb-4 w-full">
     <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-md overflow-hidden">
+      <% if i % 3 == 0 %>
+        <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="blog">
+      <% elsif i % 2 == 0 %>
+        <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1581089781785-603411fa81e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="blog">
+      <% end %>
       <div class="p-6">
         <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">20/04/2022</h2>
         <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Lorem ipsum dolor sit amet</h1>
