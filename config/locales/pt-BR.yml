@@ -37,6 +37,7 @@ pt-BR:
         end_at: Fim
         main_goal: Objetivo
         members: Membros
+        resources: Recursos
         start_at: Início
         status: Status
         title: Título
@@ -50,6 +51,7 @@ pt-BR:
         end_at: Fim
         kind: Tipo
         name: Nome
+        projects: Projetos
         start_at: Início
       resource/kinds:
         material: Material
