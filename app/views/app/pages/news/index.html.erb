@@ -2,32 +2,18 @@
 <div class="flex items-center mb-4">
   <h1><%= t('pages.app.pages.news.title') %></h1>
   <div class="flex flex-auto justify-end">
-    <% if current_user.admin? %>
-      <%= link_to t('shared.new'), 'new_app_news_path', class: 'open-modal button-link', remote: true %>
+    <% if policy(News).new? %>
+      <%= link_to t('shared.new'), new_app_news_path, class: 'open-modal button-link', remote: true %>
     <% end %>
   </div>
 </div>
 <div class="max-w-screen-md mx-auto flex flex-wrap">
-  <% (1..5).each do |i| %>
-  <div class="pb-4 w-full">
-    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-md overflow-hidden">
-      <% if i % 3 == 0 %>
-        <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="blog">
-      <% elsif i % 2 == 0 %>
-        <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1581089781785-603411fa81e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="blog">
-      <% end %>
-      <div class="p-6">
-        <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">20/04/2022</h2>
-        <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Lorem ipsum dolor sit amet</h1>
-        <p class="leading-relaxed mb-3">Cras malesuada mattis urna a porttitor. In hac habitasse platea dictumst. Maecenas maximus eget quam eu tempor. Suspendisse imperdiet et eros nec viverra. Curabitur sapien purus, suscipit id risus ac, suscipit condimentum felis. Pellentesque aliquam pharetra sem, sed malesuada dolor egestas vel.</p>
-        
-        <div class="flex justify-end">
-          <img class="rounded-full w-8 h-8 object-cover object-center mr-2 bg-gray-100" src="http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWDg9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fff5e20494250d48b0a2865aa045e5bfcb9c7fd2/craig-mckay-jmURdhtm7Ng-unsplash.jpg">
-          <span class="inline-flex items-center text-gray-400">John Doe</span>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'menu', locals: { submenu: @submenu } %>
+  <% if @news.empty? %>
+    <div class="w-full py-8 text-center text-gray-400"><%= t('pages.app.pages.news.not_found') %></div>
+  <% end %>
+  <% @news.each do |news| %>
+    <%= render partial: 'news', locals: { news: news } %>
   <% end %>
 </div>
 <%= render 'app/shared/modal' %>

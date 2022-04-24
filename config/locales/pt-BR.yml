@@ -25,6 +25,14 @@ pt-BR:
         accepted: Aceito
         pending: Pendente
         refused: Rejeitado
+      news:
+        cover: Capa
+        description: Descrição
+        end_at: Fim
+        remove_cover: Remover capa
+        start_at: Início
+        status: Status
+        title: Título
       profile:
         lattes_url: Currículo Lattes
         name: Nome
@@ -131,6 +139,10 @@ pt-BR:
         events:
           title: Eventos
         news:
+          active: Ativas
+          all: Todas
+          mine: Minhas
+          not_found: Nenhuma notícia encontrada
           title: Notícias
         meetings:
           title: Reuniões

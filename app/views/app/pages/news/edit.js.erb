@@ -1,0 +1,1 @@
+$("#modal-body").html("<%= escape_javascript(render partial: 'form', locals: { resource: @news, title: "#{t('shared.edit')} #{t('activerecord.models.news')}" } ) %>");

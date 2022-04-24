@@ -3,7 +3,7 @@
     <%= link_to raw("<span class='text-center text-black text-2xl font-semibold'>#{@group[:name] || 'S2GP'}</span>"), app_path %>
   </div>
   <%= render 'app/shared/menu' %>
-  <div class="absolute bottom-3 w-full px-4">
+  <div class="absolute bottom-3 w-full px-4 bg-white">
     <div class="flex items-center">
       <div>
         <% if current_user.profile.name.present? %>

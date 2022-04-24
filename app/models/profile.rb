@@ -4,6 +4,7 @@ class Profile < ApplicationRecord
   has_one_attached :avatar
 
   has_many :members
+  has_many :news
   has_many :projects, through: :members
 
   validate :validate_avatar, on: :update
@@ -11,7 +12,7 @@ class Profile < ApplicationRecord
   validates :name, presence: true, on: :update
   validates :user_id, presence: true, uniqueness: true
 
-  scope :actives, -> {
+  scope :active, -> {
     joins(:members).where(members: { status: 'accepted' }).group(:id).order(:name)
   }
 

@@ -10,12 +10,14 @@ class Member < ApplicationRecord
   validates :profile_id, presence: true, uniqueness: { scope: [ :project_id ] }
   validates :project_id, presence: true
 
-  scope :actives, -> {
+  scope :active, -> {
     where(status: 'accepted')
   }
+
   scope :by_name, -> {
     includes(:profile).order('profiles.name')
   }
+
   scope :by_roles, -> {
     order(Arel.sql("(CASE WHEN role = 'researcher' THEN 0 WHEN role = 'student' THEN 1 ELSE 2 END)")).by_name
   }

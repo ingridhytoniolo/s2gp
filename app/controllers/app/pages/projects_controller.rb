@@ -1,4 +1,7 @@
 class App::Pages::ProjectsController < ApplicationController
+  require 'mini_magick'
+  require 'image_processing/mini_magick'
+
   before_action :authenticate_user!
   before_action :authorize_project
   before_action :set_active_menu
