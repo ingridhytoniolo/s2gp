@@ -20,7 +20,6 @@ Rails.application.routes.draw do
       resources :activities, controller: 'pages/active_project/activities'
       resources :meetings, controller: 'pages/active_project/meetings'
       resources :members, controller: 'pages/active_project/members'
-      resources :news, controller: 'pages/active_project/news', only: [:index]
       resources :resources, controller: 'pages/active_project/resources', only: [:index] do
         post :remove, to: 'pages/active_project/resources#remove'
       end
