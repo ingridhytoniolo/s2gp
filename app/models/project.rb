@@ -8,6 +8,7 @@ class Project < ApplicationRecord
   has_one_attached :avatar
 
   has_many :activities
+  has_many :meetings
   has_many :members
 
   validate :validate_avatar, on: :update

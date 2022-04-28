@@ -1,0 +1,48 @@
+<%= render 'app/shared/header' %>
+<h2 class="subtitle">
+  <%= link_to raw("<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 17l-5-5m0 0l5-5m-5 5h12' />
+      </svg> #{t('pages.app.pages.meetings.title')}"), app_meetings_path, class: 'flex flex-row items-center' %>
+</h2>
+<div class="max-w-screen-md mx-auto flex justify-between mb-4">
+  <h1><%= @meeting.title %></h1>
+  <div class="flex p-2">
+    <% if policy(@meeting).edit? %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+      </svg>'), edit_app_meeting_path(@meeting), class: 'open-modal appearance-none flex justify-center', data: { remote: true } %>
+    <% end %>
+    <% if policy(@meeting).destroy? %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+      </svg>'), app_meeting_path(@meeting), class: 'appearance-none flex justify-center', data: { confirm: t('shared.are_you_sure') }, method: :delete %>
+    <% end %>
+  </div>
+</div>
+<div class="max-w-screen-md mx-auto">
+  <div class="p-4">
+    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400">
+      <%= @meeting.date.strftime('%d/%m/%Y %H:%M') %>
+    </h2>
+    <p class="leading-relaxed mt-3">
+      <%= @meeting.description&.gsub(/\n/, '<br/>')&.html_safe %>
+    </p>
+    <% if @meeting.location.present? %>
+    <div class="mt-6">
+      <label><%= Meeting.human_attribute_name('location') %></label>
+      <p class=text-gray-400">
+        <%= @meeting.location %>
+      </p>
+    </div>
+    <% end %>
+    <% if @meeting.streaming_url.present? %>
+    <div class="mt-6">
+      <label><%= Meeting.human_attribute_name('streaming_url') %></label>
+      <p class=text-gray-400">
+        <%= link_to @meeting.streaming_url, @meeting.streaming_url, target: '_new' %>
+      </p>
+    </div>
+    <% end %>
+  </div>
+</div>
+<%= render 'app/shared/modal' %>

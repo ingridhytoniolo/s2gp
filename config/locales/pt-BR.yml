@@ -16,6 +16,13 @@ pt-BR:
         created: Criada
         done: Finalizada
         started: Iniciada
+      meeting:
+        date: Data
+        description: Descrição
+        location: Local
+        streaming_url: Link da transmissão
+        title: Título
+        public: Pública
       member:
         role: Função
       member/roles:
@@ -94,6 +101,10 @@ pt-BR:
         admin: Admin
     errors:
       models:
+        meeting:
+          attributes:
+            date:
+              blank: inválida
         project:
           attributes:
             start_at:
@@ -145,6 +156,10 @@ pt-BR:
           not_found: Nenhuma notícia encontrada
           title: Notícias
         meetings:
+          active: Ativas
+          all: Todas
+          mine: Minhas
+          not_found: Nenhuma reunião encontrada
           title: Reuniões
         members:
           title: Membros

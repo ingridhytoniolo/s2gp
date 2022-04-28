@@ -1,0 +1,15 @@
+<div class="pb-4 w-full">
+  <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-md overflow-hidden">
+    <div class="p-4">
+      <h2 class="tracking-widest text-xs title-font font-medium text-gray-400">
+        <%= meeting.date.strftime('%d/%m/%Y %H:%M') %>
+      </h2>
+      <h1 class="title-font text-lg font-medium text-gray-900 mt-1">
+        <%= link_to meeting.title, app_meeting_path(meeting) %>
+      </h1>
+      <p class="leading-relaxed mt-3">
+        <%= meeting.description&.gsub(/\n/, '<br/>')&.html_safe %>
+      </p>
+    </div>
+  </div>
+</div>

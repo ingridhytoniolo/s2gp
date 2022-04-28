@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get :new_avatar, to: 'pages/profile#new_avatar'
       delete :delete_avatar, to: 'pages/profile#delete_avatar'
     end
+    resources :meetings, controller: 'pages/meetings'
     resources :news, controller: 'pages/news'
     resources :projects, controller: 'pages/projects' do
       post :join, to: 'pages/projects#join'
