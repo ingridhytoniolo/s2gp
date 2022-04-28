@@ -32,17 +32,13 @@
       <% if @announcement.start_at.present? %>
       <div>
         <label><%= Announcement.human_attribute_name('start_at') %></label>
-        <p class="text-gray-400">
-          <%= @announcement.start_at %>
-        </p>
+        <p><%= @announcement.start_at.strftime('%d/%m/%Y') %></p>
       </div>
       <% end %>
       <% if @announcement.end_at.present? %>
       <div>
         <label><%= Announcement.human_attribute_name('end_at') %></label>
-        <p class="text-gray-400">
-          <%= @announcement.end_at %>
-        </p>
+        <p><%= @announcement.end_at.strftime('%d/%m/%Y') %></p>
       </div>
       <% end %>
     </div>
@@ -50,7 +46,7 @@
     <% if @announcement.external_url.present? %>
     <div class="mt-6">
       <label><%= Announcement.human_attribute_name('external_url') %></label>
-      <p class=text-gray-400">
+      <p class="text-gray-400">
         <%= link_to @announcement.external_url, @announcement.external_url, target: '_new' %>
       </p>
     </div>

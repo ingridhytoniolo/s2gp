@@ -1,11 +1,8 @@
 <div class="pb-4 w-full">
   <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-md overflow-hidden">
-    <% if event.cover.attached? %>
-      <%= image_tag event.cover, class: 'lg:h-48 md:h-36 w-full object-cover object-center bg-gray-100' %>
-    <% end %>
     <div class="p-4">
       <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-        <%= event.date.strftime('%d/%m/%Y %H:%M') %>
+        <%= event.date.strftime('%d/%m/%Y') %>
       </h2>
       <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
         <%= link_to event.title, app_event_path(event) %>

@@ -13,7 +13,7 @@
     <div class="w-full py-8 text-center text-gray-400"><%= t('pages.app.pages.events.not_found') %></div>
   <% end %>
   <% @events.each do |event| %>
-    <%= render partial: 'event', locals: { events: event } %>
+    <%= render partial: 'event', locals: { event: event } %>
   <% end %>
 </div>
 <%= render 'app/shared/modal' %>

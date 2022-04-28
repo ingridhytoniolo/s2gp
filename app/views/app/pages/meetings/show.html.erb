@@ -30,15 +30,13 @@
     <% if @meeting.location.present? %>
     <div class="mt-6">
       <label><%= Meeting.human_attribute_name('location') %></label>
-      <p class=text-gray-400">
-        <%= @meeting.location %>
-      </p>
+      <p><%= @meeting.location %></p>
     </div>
     <% end %>
     <% if @meeting.streaming_url.present? %>
     <div class="mt-6">
       <label><%= Meeting.human_attribute_name('streaming_url') %></label>
-      <p class=text-gray-400">
+      <p class="text-gray-400">
         <%= link_to @meeting.streaming_url, @meeting.streaming_url, target: '_new' %>
       </p>
     </div>
