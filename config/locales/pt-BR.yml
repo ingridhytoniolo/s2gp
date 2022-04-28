@@ -16,6 +16,13 @@ pt-BR:
         created: Criada
         done: Finalizada
         started: Iniciada
+      announcement:
+        description: Descrição
+        end_at: Fim
+        external_url: Link externo
+        start_at: Início
+        status: Status
+        title: Edital
       event:
         date: Data
         description: Descrição
@@ -26,7 +33,7 @@ pt-BR:
         description: Descrição
         location: Local
         streaming_url: Link da transmissão
-        title: Título
+        title: Reunião
         public: Pública
       member:
         role: Função
@@ -127,7 +134,7 @@ pt-BR:
               confirmation: não é igual a senha
     models:
       activity: Atividade
-      announcements: Edital
+      announcement: Edital
       event: Evento
       meeting: Reunião
       member: Membro
@@ -147,6 +154,10 @@ pt-BR:
     app:
       pages:
         announcements:
+          active: Ativos
+          all: Todos
+          mine: Meus
+          not_found: Nenhum edital encontrado
           title: Editais
         activities:
           title: Atividades

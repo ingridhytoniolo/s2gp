@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :app do
     get '/', to: 'pages#index'
+    resources :announcements, controller: 'pages/announcements'
     resources :events, controller: 'pages/events'
     resources :meetings, controller: 'pages/meetings'
     resources :news, controller: 'pages/news'

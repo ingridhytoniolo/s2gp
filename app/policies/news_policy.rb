@@ -30,6 +30,6 @@ class NewsPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || user.researcher?
+    user.admin? || user.profile.id == record.profile_id
   end
 end

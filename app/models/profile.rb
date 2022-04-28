@@ -3,6 +3,8 @@ class Profile < ApplicationRecord
 
   has_one_attached :avatar
 
+  has_many :announcements
+  has_many :events
   has_many :meetings
   has_many :members
   has_many :news

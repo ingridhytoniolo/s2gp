@@ -18,7 +18,7 @@ class MeetingPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin? || user.researcher?
+    true
   end
 
   def destroy?
@@ -30,6 +30,6 @@ class MeetingPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || user.researcher?
+    user.admin? || user.profile.id == record.profile_id
   end
 end
