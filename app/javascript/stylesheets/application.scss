@@ -188,7 +188,7 @@ table {
 }
 
 .sidebar-menu {
-  @apply mt-8;
+  @apply mt-4 mb-2;
 
   li {
     @apply flex items-center px-3 py-3 mb-2 rounded text-gray-800 hover:text-white hover:bg-gray-800;

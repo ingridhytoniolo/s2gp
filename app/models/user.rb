@@ -12,6 +12,10 @@ class User < ApplicationRecord
     roles.include?('admin')
   end
 
+  def pendency?
+    return true unless profile && profile.name
+  end
+
   def researcher?
     return false unless profile
 

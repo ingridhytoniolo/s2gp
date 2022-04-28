@@ -18,7 +18,7 @@ class MeetingPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.admin? || !user.pendency?
   end
 
   def destroy?
