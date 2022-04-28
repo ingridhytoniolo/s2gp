@@ -16,6 +16,11 @@ pt-BR:
         created: Criada
         done: Finalizada
         started: Iniciada
+      event:
+        date: Data
+        description: Descrição
+        location: Local
+        title: Título
       meeting:
         date: Data
         description: Descrição
@@ -148,6 +153,10 @@ pt-BR:
         dashboard:
           title: Dashboard
         events:
+          active: Ativos
+          all: Todos
+          mine: Meus
+          not_found: Nenhum evento encontrado
           title: Eventos
         news:
           active: Ativas

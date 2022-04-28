@@ -1,0 +1,19 @@
+<%= render 'app/shared/header' %>
+<div class="flex items-center mb-4">
+  <h1><%= t('pages.app.pages.events.title') %></h1>
+  <div class="flex flex-auto justify-end">
+    <% if policy(Event).new? %>
+      <%= link_to t('shared.new'), new_app_event_path, class: 'open-modal button-link', remote: true %>
+    <% end %>
+  </div>
+</div>
+<div class="max-w-screen-md mx-auto flex flex-wrap">
+  <%= render partial: 'menu', locals: { submenu: @submenu } %>
+  <% if @events.empty? %>
+    <div class="w-full py-8 text-center text-gray-400"><%= t('pages.app.pages.events.not_found') %></div>
+  <% end %>
+  <% @events.each do |event| %>
+    <%= render partial: 'event', locals: { events: event } %>
+  <% end %>
+</div>
+<%= render 'app/shared/modal' %>
