@@ -25,7 +25,7 @@
   <% end %>
   <div class="py-4">
     <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-      <%= @news.created_at.strftime('%d/%m/%Y') %>
+      <%= @news.created_at.strftime('%d/%m/%Y %H:%M') %>
     </h2>
     <p class="leading-relaxed mb-3">
       <%= @news.description&.gsub(/\n/, '<br/>')&.html_safe %>

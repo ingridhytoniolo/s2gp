@@ -2,7 +2,7 @@
   <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-md overflow-hidden">
     <div class="p-4">
       <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-        <%= event.date.strftime('%d/%m/%Y') %>
+        <%= event.date.strftime('%d/%m/%Y %H:%M') %>
       </h2>
       <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
         <%= link_to event.title, app_event_path(event) %>

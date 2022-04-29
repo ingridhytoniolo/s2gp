@@ -5,7 +5,12 @@ class App::PagesController < ApplicationController
 
   layout 'app'
 
-  def index; end
+  def index
+    @news = News.active.last(3) # fix
+    @meetings = Meeting.active.last(3) # fix
+    @events = Event.active.last(3) # fix
+    @announcements = Announcement.active.last(3) # fix
+  end
 
   private
 

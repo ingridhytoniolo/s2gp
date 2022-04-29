@@ -3,7 +3,7 @@
   <div id="modal-errors"></div>
   <div class="field w-1/2">
     <%= f.label :date %>
-    <%= f.text_field :date, value: resource.date&.strftime('%d/%m/%Y'), data: { inputmask: '"mask": "99/99/9999"' }, required: true %>
+    <%= f.text_field :date, value: resource.date&.strftime('%d/%m/%Y %H:%M'), data: { inputmask: '"mask": "99/99/9999 99:99"' }, required: true %>
   </div>
   <div class="field">
     <%= f.label :title %>

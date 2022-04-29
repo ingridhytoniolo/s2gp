@@ -1,9 +1,48 @@
 <%= render 'app/shared/header' %>
-<div class="flex items-center mb-4">
-  <h1><%= t('pages.app.pages.dashboard.title') %></h1>
-</div>
 <div class="max-w-screen-lg mx-auto flex flex-wrap">
   <% if current_user.profile.name.nil? %>
     <%= alert_box(:warning, t('pages.app.pages.profile.messages.incomplete_profile'), t('pages.app.pages.profile.labels.complete_profile'), app_profile_index_path) %>
   <% end %>
+</div>
+<div class="max-w-screen-lg mx-auto">
+  <div class="mb-4 grid lg:grid-cols-2 gap-4">
+    <div class="widget">
+      <p class="title">
+        <%= link_to t("pages.app.pages.news.title"), app_news_index_path %>
+      </p>
+      <% if @news.empty? %>
+        <p class="not-found"><%= t('pages.app.pages.news.not_found') %></p>
+      <% end %>
+      <% @news.each do |news| %>
+        <%= render partial: 'news', locals: { news: news } %>
+      <% end %>
+    </div>
+    <div class="widget">
+      <p class="title"><%= t("pages.app.pages.meetings.title") %></p>
+      <% if @meetings.empty? %>
+        <p class="not-found"><%= t('pages.app.pages.meetings.not_found') %></p>
+      <% end %>
+      <% @meetings.each do |meeting| %>
+        <%= render partial: 'meeting', locals: { meeting: meeting } %>
+      <% end %>
+    </div>
+    <div class="widget">
+      <p class="title"><%= t("pages.app.pages.events.title") %></p>
+      <% if @events.empty? %>
+        <p class="not-found"><%= t('pages.app.pages.events.not_found') %></p>
+      <% end %>
+      <% @events.each do |event| %>
+        <%= render partial: 'event', locals: { event: event } %>
+      <% end %>
+    </div>
+    <div class="widget">
+      <p class="title"><%= t("pages.app.pages.announcements.title") %></p>
+      <% if @announcements.empty? %>
+        <p class="not-found"><%= t('pages.app.pages.announcements.not_found') %></p>
+      <% end %>
+      <% @announcements.each do |announcement| %>
+        <%= render partial: 'announcement', locals: { announcement: announcement } %>
+      <% end %>
+    </div>
+  </div>
 </div>

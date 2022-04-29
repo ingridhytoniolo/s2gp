@@ -233,3 +233,12 @@ ul.check-box {
     }
   }
 }
+
+.widget {
+  .title {
+    @apply mb-4 text-lg text-gray-600 font-light border-b-2 border-gray-100 border-dotted;
+  }
+  .not-found {
+    @apply w-full pt-4 pb-8 text-center text-gray-400;
+  }
+}
