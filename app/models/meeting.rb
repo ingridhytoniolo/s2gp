@@ -1,6 +1,6 @@
 class Meeting < ApplicationRecord
   belongs_to :profile
-  has_one :project
+  belongs_to :project
 
   validates :date, presence: true
   validates :profile_id, presence: true

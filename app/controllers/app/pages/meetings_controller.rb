@@ -10,11 +10,11 @@ class App::Pages::MeetingsController < ApplicationController
     @submenu = params[:show]
 
     if @submenu == 'all'
-      @meetings = Meeting.all.order(date: :asc)
+      @meetings = user_meetings.order(date: :asc)
     elsif @submenu == 'mine'
       @meetings = current_user.profile.meetings.order(date: :asc)
     else
-      @meetings = Meeting.active.order(date: :asc)
+      @meetings = user_meetings.active.order(date: :asc)
     end
   end
 
@@ -88,9 +88,19 @@ class App::Pages::MeetingsController < ApplicationController
   end
 
   def set_meeting
-    @meeting = Meeting.find(params[:id])
+    @meeting = user_meetings.find(params[:id])
   rescue
     flash[:alert] = t('shared.error')
     redirect_to app_meetings_path
+  end
+
+  def user_meetings
+    return Meeting.all if current_user.admin?
+
+    project_ids = current_user.profile.projects.ids
+
+    Meeting.where(public: true).
+      or(Meeting.where(project_id: project_ids)).
+      or(current_user.profile.meetings)
   end
 end

@@ -41,6 +41,14 @@
       </p>
     </div>
     <% end %>
+    <div class="mt-6">
+      <label><%= t('pages.app.pages.meetings.participants') %></label>
+      <% if @meeting.public? %>
+        <p><%= t('shared.all_group') %></p>
+      <% elsif @meeting.project %>
+        <p><%= @meeting.project.title %></p>
+      <% end %>
+    </div>
   </div>
 </div>
 <%= render 'app/shared/modal' %>

@@ -1,4 +1,17 @@
 <%= render 'app/pages/active_project/shared/subheader' %>
 <div class="max-w-screen-lg mx-auto flex flex-wrap">
   <%= render partial: 'app/pages/active_project/shared/menu', locals: { submenu: 'meetings' } %>
+  <div class="w-full mb-4 flex flex-auto justify-end">
+    <% if current_user.admin? || @project.researcher?(current_user.profile) %>
+      <%= link_to t('shared.add'), '', class: 'open-modal button-link', remote: true %>
+    <% end %>
+  </div>
+  <div class="max-w-screen-md mx-auto w-full">
+    <% if @meetings.empty? %>
+      <div class="w-full py-8 text-center text-gray-400"><%= t('pages.app.pages.meetings.not_found') %></div>
+    <% end %>
+    <% @meetings.each do |meeting| %>
+      <%= render partial: 'app/pages/meetings/meeting', locals: { meeting: meeting } %>
+    <% end %>
+  </div>
 </div>

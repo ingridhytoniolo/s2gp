@@ -6,9 +6,11 @@
     <a href="<%= app_announcements_path %>?show=all" <%= 'class=active' if submenu == 'all' %>>
       <%= t('pages.app.pages.announcements.all') %>
     </a>
-    <a href="<%= app_announcements_path %>?show=mine" <%= 'class=active' if submenu == 'mine' %>>
-      <%= t('pages.app.pages.announcements.mine') %>
-    </a>
+    <% if policy(Announcement).new? %>
+      <a href="<%= app_announcements_path %>?show=mine" <%= 'class=active' if submenu == 'mine' %>>
+        <%= t('pages.app.pages.announcements.mine') %>
+      </a>
+    <% end %>
   </div>
 </div>
 <div class="lg:hidden w-full">
@@ -16,7 +18,9 @@
     <select name="submenu" id="submenu" onchange="redirect(this)">
       <option class="submenu-item" value="announcement" data-href="<%= app_announcements_path %>" <%= 'selected' if submenu.nil? %>><%= t('pages.app.pages.announcements.active') %></option>
       <option class="submenu-item" value="announcement" data-href="<%= app_announcements_path %>?show=all" <%= 'selected' if submenu == 'all'%>><%= t('pages.app.pages.announcements.all') %></option>
-      <option class="submenu-item" value="announcement" data-href="<%= app_announcements_path %>?show=mine" <%= 'selected' if submenu == 'mine' %>><%= t('pages.app.pages.announcements.mine') %></option>
+      <% if policy(Announcement).new? %>
+        <option class="submenu-item" value="announcement" data-href="<%= app_announcements_path %>?show=mine" <%= 'selected' if submenu == 'mine' %>><%= t('pages.app.pages.announcements.mine') %></option>
+      <% end %>
     </select>
   </div>
 </div>

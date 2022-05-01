@@ -7,6 +7,16 @@
       <%= f.text_field :date, value: resource.date&.strftime('%d/%m/%Y %H:%M'), data: { inputmask: '"mask": "99/99/9999 99:99"' }, required: true %>
     </div>
   </div>
+  <div class="cols">
+    <div class="field w-1/2">
+      <%= f.label :public %>
+      <%= f.select :public, [[t('shared.option_yes'), true], [t('shared.option_no'), false]] %>
+    </div>
+    <div class="field w-1/2">
+      <%= f.label :project_id %>
+      <%= f.select :project_id, Project.active.map {|project| [project.title, project.id]}, { include_blank: true } %>
+    </div>
+  </div>
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title, required: true %>

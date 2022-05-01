@@ -17,6 +17,10 @@ class Project < ApplicationRecord
   validates :start_at, presence: true
   validates :title, presence: true
 
+  scope :active, -> {
+    where(status: 'created').order(:title)
+  }
+
   scope :by_status, -> {
     order(Arel.sql("(CASE WHEN status = 'created' THEN 0 WHEN status = 'paused' THEN 1 ELSE 2 END)"), :title)
   }
