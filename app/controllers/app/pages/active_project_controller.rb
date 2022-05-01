@@ -4,10 +4,6 @@ class App::Pages::ActiveProjectController < ApplicationController
   before_action :set_project
   before_action :authorize_member
 
-  layout 'app'
-
-  def dashboard; end
-
   private
 
   def authorize_member

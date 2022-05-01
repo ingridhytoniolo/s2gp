@@ -19,7 +19,6 @@ Rails.application.routes.draw do
     end
     resources :projects, controller: 'pages/projects' do
       post :join, to: 'pages/projects#join'
-      get :dashboard, to: 'pages/active_project#dashboard'
       resources :activities, controller: 'pages/active_project/activities'
       resources :meetings, controller: 'pages/active_project/meetings'
       resources :members, controller: 'pages/active_project/members'

@@ -1,8 +1,5 @@
 <div class="hidden lg:block w-full">
   <div class="tabs">
-    <a href="<%= app_project_dashboard_path(@project) %>" <%= 'class=active' if submenu == 'dashboard' %>>
-      <%= t('pages.app.pages.dashboard.title') %>
-    </a>
     <a href="<%= app_project_meetings_path(@project) %>" <%= 'class=active' if submenu == 'meetings' %>>
       <%= t('pages.app.pages.meetings.title') %>
     </a>
@@ -20,7 +17,6 @@
 <div class="lg:hidden w-full">
   <div class="mobile-tabs">
     <select name="submenu" id="submenu" onchange="redirect(this)">
-      <option class="submenu-item" value="dashboard" data-href="<%= app_project_dashboard_path(@project) %>" <%= 'selected' if submenu == 'dashboard' %>><%= t('pages.app.pages.dashboard.title') %></option>
       <option class="submenu-item" value="meetings" data-href="<%= app_project_meetings_path(@project) %>" <%= 'selected' if submenu == 'meetings' %>><%= t('pages.app.pages.meetings.title') %></option>
       <option class="submenu-item" value="activities" data-href="<%= app_project_activities_path(@project) %>" <%= 'selected' if submenu == 'activities' %>><%= t('pages.app.pages.activities.title') %></option>
       <option class="submenu-item" value="resources" data-href="<%= app_project_resources_path(@project) %>" <%= 'selected' if submenu == 'resources' %>><%= t('pages.app.pages.resources.title') %></option>
