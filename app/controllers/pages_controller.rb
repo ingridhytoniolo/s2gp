@@ -4,6 +4,6 @@ class PagesController < ApplicationController
   def index; end
 
   def team
-    @team = Profile.actives
+    @team = Profile.active
   end
 end
