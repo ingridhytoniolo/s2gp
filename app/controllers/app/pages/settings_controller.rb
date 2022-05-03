@@ -20,7 +20,7 @@ class App::Pages::SettingsController < ApplicationController
     if @setting.image.attached?
       @setting.image.purge
 
-      cover_image_url if @setting.name == 'cover_image'
+      cover_image_url
 
       flash[:notice] = t('shared.success')
     end
@@ -50,12 +50,12 @@ class App::Pages::SettingsController < ApplicationController
   end
 
   def cover_image_url
-    cover_image = Setting.find_by(name: 'cover_image')
+    return unless @setting.name == 'cover_image'
     
     if @setting.image.attached?
-      cover_image.update(value: rails_blob_path(@setting.image , only_path: true))
+      @setting.update(value: rails_blob_path(@setting.image , only_path: true))
     else
-      cover_image.update(value: nil)
+      @setting.update(value: nil)
     end
   end
 
