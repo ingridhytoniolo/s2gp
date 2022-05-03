@@ -84,6 +84,7 @@ pt-BR:
         material: Material
         financial: Finaceiro
       setting:
+        image: Imagem
         name: Nome
         value: Valor
       user:
@@ -204,6 +205,7 @@ pt-BR:
             address: Endereço
             available_locales: Idiomas disponíveis
             contact_information: Informações de contato
+            cover_image: Imagem de capa
             default_locale: Idioma padrão
             google_maps_api_key: API Key do Google Maps
             name: Nome

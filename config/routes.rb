@@ -29,7 +29,9 @@ Rails.application.routes.draw do
       post '/resources/associate', to: 'pages/active_project/resources#associate'
     end
     resources :resources, controller: 'pages/resources'
-    resources :settings, controller: 'pages/settings', only: [:edit, :index, :update]
+    resources :settings, controller: 'pages/settings', only: [:edit, :index, :update] do
+      delete :delete_image, to: 'pages/settings#delete_image'
+    end
     resources :users, controller: 'pages/users'
   end
 end

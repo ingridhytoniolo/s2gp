@@ -1,9 +1,9 @@
 <%= render 'layouts/header' %>
 <div class="container mx-auto p-4">
   <div class="flex flex-wrap items-center">
-    <% if @group[:cover_image_url].present? %>
+    <% if @group[:cover_image].present? %>
     <div class="md:w-1/3 p-8">
-      <%= image_tag(@group[:cover_image_url]) %>
+      <%= image_tag(@group[:cover_image]) %>
     </div>
     <% end %>
     <div class="mx-auto md:w-2/3">

@@ -20,6 +20,11 @@
       <%= f.label :value %>
       <%= f.text_area :value %>
     </div>
+  <% elsif resource.name == 'cover_image' %>
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
   <% else %>
     <div class="field">
       <%= f.label :value %>

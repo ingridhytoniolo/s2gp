@@ -4,6 +4,10 @@ class SettingsPolicy < ApplicationPolicy
       scope.all
     end
   end
+  
+  def delete_image?
+    user.admin?
+  end
 
   def edit?
     update?
