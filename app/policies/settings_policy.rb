@@ -5,7 +5,15 @@ class SettingsPolicy < ApplicationPolicy
     end
   end
 
+  def edit?
+    update?
+  end
+  
   def index?
+    user.admin?
+  end
+
+  def update?
     user.admin?
   end
 end

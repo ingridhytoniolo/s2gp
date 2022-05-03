@@ -1,7 +1,7 @@
 <div class="hidden md:block relative w-64 bg-white shadow-md">
   <div class="flex flex-col h-full">
     <div class="flex items-center p-4">
-      <%= link_to raw("<span class='text-center text-black text-2xl font-semibold'>#{@group[:name] || 'S2GP'}</span>"), app_path %>
+      <%= link_to raw("<span class='text-center text-black text-2xl font-semibold'>#{@group[:short_name]}</span>"), app_path %>
     </div>
     <div class="h-full overflow-scroll">
       <%= render 'app/shared/menu' %>

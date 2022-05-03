@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       post '/resources/associate', to: 'pages/active_project/resources#associate'
     end
     resources :resources, controller: 'pages/resources'
-    get '/settings', to: 'pages/settings#index'
+    resources :settings, controller: 'pages/settings', only: [:edit, :index, :update]
     resources :users, controller: 'pages/users'
   end
 end

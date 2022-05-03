@@ -5,7 +5,7 @@
   <% end %>
 </div>
 <div class="max-w-screen-lg mx-auto">
-  <h1 class="mb-8 text-center"><%= @group["long_name_#{I18n.locale.to_s.sub('-','_')}".to_sym] %></h1>
+  <h1 class="mb-8 text-center"><%= @group["name_#{I18n.locale.to_s.sub('-','_')}".to_sym] %></h1>
   <div class="mb-4 grid lg:grid-cols-2 gap-4">
     <div class="widget">
       <p class="title">

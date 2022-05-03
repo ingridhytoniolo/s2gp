@@ -1,0 +1,40 @@
+<%= form_with(model: [ :app, resource ], local: false, id: 'modal-form') do |f| %>
+  <h1 class="text-xl font-semibold"><%= title %></h1>
+  <div id="modal-errors"></div>
+  <% if resource.name == 'available_locales' %>
+    <div class="field">
+      <%= f.label :value %>
+      <div class="flex flex-wrap gap-4">
+        <% ['en', 'es', 'fr', 'pt-BR'].each do |locale| %>
+          <div class="flex items-center my-2">
+            <%= f.check_box :value, { multiple: true, checked: resource.value.include?(locale) }, locale, nil %>
+            <%= f.label "value_#{locale}", locale %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% elsif resource.name == 'default_locale' %>
+    <%= f.select :value,  [['English', 'en'], ['Español', 'es'], ['Français', 'fr'], ['Português', 'pt-BR']], { selected: resource.value } %>
+  <% elsif resource.name.start_with?('about_') || ['address','contact_information'].include?(resource.name) %>
+    <div class="field">
+      <%= f.label :value %>
+      <%= f.text_area :value %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= f.label :value %>
+      <%= f.text_field :value %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= f.button t('shared.cancel'), type: :button, class: 'w-full sm:w-1/2', onClick: 'resetModal()',
+        data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+    <%= f.button t('shared.submit'), type: :submit, class: 'primary w-full sm:w-1/2',
+        data: { disable_with: '<div class="flex items-center justify-center my-2 space-x-1 animate-pulse"><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div><div class="w-2 h-2 bg-gray-400 rounded-full"></div></div>' } %>
+  </div>
+<% end %>
+<script type="application/javascript">
+  $(document).ready(function() {
+    Inputmask().mask(document.querySelectorAll('input'));
+  });
+</script>

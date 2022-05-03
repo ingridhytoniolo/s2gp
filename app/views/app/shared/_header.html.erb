@@ -7,7 +7,7 @@
     </nav>
   </div>
   <div class="flex w-1/2 md:w-1/5 items-center justify-center">
-    <%= link_to raw("<span class='text-center text-black text-xl font-semibold'>#{@group[:name] || 'S2GP'}</span>"), app_path %>
+    <%= link_to raw("<span class='text-center text-black text-xl font-semibold'>#{@group[:short_name]}</span>"), app_path %>
   </div>
   <div class="flex w-1/4 md:w-2/5 items-center justify-end">
     <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -20,7 +20,7 @@
     <div class="background fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
     <div class="w-80 bg-white p-4 overflow-hidden shadow-xl transform">
       <div class="grid grid-cols-2 items-center">
-        <span class="text-black text-xl font-semibold"><%= @group[:name] || 'S2GP' %></span>
+        <span class="text-black text-xl font-semibold"><%= @group[:short_name] %></span>
         <button class="appearance-none close-mobile-menu justify-self-end">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />

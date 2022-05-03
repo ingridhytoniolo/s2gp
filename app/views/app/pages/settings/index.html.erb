@@ -2,3 +2,94 @@
 <div class="flex items-center mb-4">
   <h1><%= t("pages.app.pages.settings.title") %></h1>
 </div>
+<div class="max-w-screen-md mx-auto">
+  <div class="field">
+    <div class="flex flex-auto items-end gap-2">
+      <%= label_tag "#{t('pages.app.pages.settings.attributes.available_locales')}" %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>'), edit_app_setting_path('available_locales'), class: 'open-modal appearance-none', data: { remote: true } %>
+    </div>
+    <div class="flex flex-auto gap-2">
+      <% @group[:available_locales].each do |locale| %>
+        <span class="badge"><%= locale %></span>
+      <% end %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="flex flex-auto items-end gap-2">
+      <%= label_tag "#{t('pages.app.pages.settings.attributes.default_locale')}" %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>'), edit_app_setting_path('default_locale'), class: 'open-modal appearance-none', data: { remote: true } %>
+    </div>
+    <div class="flex flex-auto gap-2">
+      <span class="badge"><%= @group[:default_locale] %></span>
+    </div>
+  </div>
+  <div class="field">
+    <div class="flex flex-auto items-end gap-2">
+      <%= label_tag "#{t('pages.app.pages.settings.attributes.short_name')}" %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>'), edit_app_setting_path('short_name'), class: 'open-modal appearance-none', data: { remote: true } %>
+    </div>
+    <p><%= @group[:short_name] %></p>
+  </div>
+  <% @group[:available_locales].each do |locale| %>
+    <div class="field">
+      <div class="flex flex-auto items-end gap-2">
+        <%= label_tag "#{t('pages.app.pages.settings.attributes.name')} (#{locale})" %>
+        <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>'), edit_app_setting_path("name_#{locale.to_s.sub('-','_')}"), class: 'open-modal appearance-none', data: { remote: true } %>
+      </div>
+      <p><%= @group["name_#{locale.to_s.sub('-','_')}".to_sym] %></p>
+    </div>
+  <% end %>
+  <% @group[:available_locales].each do |locale| %>
+    <div class="field">
+      <div class="flex flex-auto items-end gap-2">
+        <%= label_tag "#{t('pages.app.pages.settings.attributes.about')} (#{locale})" %>
+        <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>'), edit_app_setting_path("about_#{locale.to_s.sub('-','_')}"), class: 'open-modal appearance-none', data: { remote: true } %>
+      </div>
+      <p><%= simple_format(@group["about_#{locale.to_s.sub('-','_')}".to_sym]) %></p>
+    </div>
+  <% end %>
+  <div class="field">
+    <div class="flex flex-auto items-end gap-2">
+      <%= label_tag "#{t('pages.app.pages.settings.attributes.address')}" %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>'), edit_app_setting_path('address'), class: 'open-modal appearance-none', data: { remote: true } %>
+    </div>
+    <div class="flex flex-auto gap-2">
+      <%= simple_format(@group[:address]) %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="flex flex-auto items-end gap-2">
+      <%= label_tag "#{t('pages.app.pages.settings.attributes.contact_information')}" %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>'), edit_app_setting_path('contact_information'), class: 'open-modal appearance-none', data: { remote: true } %>
+    </div>
+    <div class="flex flex-auto gap-2">
+      <%= simple_format(@group[:contact_information]) %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="flex flex-auto items-end gap-2">
+      <%= label_tag "#{t('pages.app.pages.settings.attributes.google_maps_api_key')}" %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>'), edit_app_setting_path('google_maps_api_key'), class: 'open-modal appearance-none', data: { remote: true } %>
+    </div>
+    <div class="flex flex-auto gap-2">
+      <span class="badge"><%= @group[:google_maps_api_key] %></span>
+    </div>
+  </div>  
+</div>
+<%= render 'app/shared/modal' %>

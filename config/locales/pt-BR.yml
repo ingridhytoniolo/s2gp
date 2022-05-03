@@ -83,6 +83,9 @@ pt-BR:
       resource/kinds:
         material: Material
         financial: Finaceiro
+      setting:
+        name: Nome
+        value: Valor
       user:
         confirmation_sent_at: Confirmação enviada em
         confirmation_token: Token de confirmação
@@ -142,6 +145,7 @@ pt-BR:
       profile: Perfil
       project: Projeto
       resource: Recurso
+      setting: Configuração
       user: Usuário
   helpers:
     failure:
@@ -195,6 +199,15 @@ pt-BR:
         resources:
           title: Recursos
         settings:
+          attributes:
+            about: Sobre
+            address: Endereço
+            available_locales: Idiomas disponíveis
+            contact_information: Informações de contato
+            default_locale: Idioma padrão
+            google_maps_api_key: API Key do Google Maps
+            name: Nome
+            short_name: Nome curto
           title: Configurações
         site: 
           title: Site
