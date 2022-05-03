@@ -12,6 +12,9 @@ basic_data = [
   ['name_pt_BR', 'Sistema Gerenciador de Grupo de Pesquisa'],
   ['about_pt_BR', 'Este sistema vislumbra alcançar as necessidades administrativas de um Grupo de Pesquisa no atual mundo digital, conectando informações e pessoas, com maior facilidade e controle da liderança.'],
   ['cover_image', nil],
+  ['facebook_url', nil],
+  ['instagram_url', nil],
+  ['twitter_url', nil],
   ['address', nil],
   ['contact_information', nil],
   ['google_maps_api_key', nil]

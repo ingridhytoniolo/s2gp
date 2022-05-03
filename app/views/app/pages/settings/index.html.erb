@@ -71,8 +71,37 @@
       <% end %>
     </div>
     <div class="flex flex-auto gap-2">
-      <%= @group[:cover_image] %>
+      <% if @group[:cover_image].present? %>
+        <%= image_tag(@group[:cover_image], class: 'w-48') %>
+      <% end %>
     </div>
+  </div>
+  <div class="field">
+    <div class="flex flex-auto items-end gap-2">
+      <%= label_tag "#{t('pages.app.pages.settings.attributes.facebook_url')}" %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>'), edit_app_setting_path('facebook_url'), class: 'open-modal appearance-none', data: { remote: true } %>
+    </div>
+    <p><%= @group[:facebook_url] %></p>
+  </div>
+  <div class="field">
+    <div class="flex flex-auto items-end gap-2">
+      <%= label_tag "#{t('pages.app.pages.settings.attributes.instagram_url')}" %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>'), edit_app_setting_path('instagram_url'), class: 'open-modal appearance-none', data: { remote: true } %>
+    </div>
+    <p><%= @group[:instagram_url] %></p>
+  </div>
+  <div class="field">
+    <div class="flex flex-auto items-end gap-2">
+      <%= label_tag "#{t('pages.app.pages.settings.attributes.twitter_url')}" %>
+      <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>'), edit_app_setting_path('twitter_url'), class: 'open-modal appearance-none', data: { remote: true } %>
+    </div>
+    <p><%= @group[:twitter_url] %></p>
   </div>
   <div class="field">
     <div class="flex flex-auto items-end gap-2">

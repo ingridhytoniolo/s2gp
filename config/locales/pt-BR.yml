@@ -207,9 +207,12 @@ pt-BR:
             contact_information: Informações de contato
             cover_image: Imagem de capa
             default_locale: Idioma padrão
+            facebook_url: URL do Facebook
             google_maps_api_key: API Key do Google Maps
+            instagram_url: URL do Instagram
             name: Nome
             short_name: Nome curto
+            twitter_url: URL do Twitter
           title: Configurações
         site: 
           title: Site
