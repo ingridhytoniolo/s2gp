@@ -32,4 +32,8 @@ class MeetingPolicy < ApplicationPolicy
   def update?
     user.admin? || user.profile.id == record.profile_id
   end
+
+  def edit_minutes?
+    update?
+  end
 end

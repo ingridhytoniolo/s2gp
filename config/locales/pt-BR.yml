@@ -32,6 +32,7 @@ pt-BR:
         date: Data
         description: Descrição
         location: Local
+        minutes: Ata da Reunião
         streaming_url: Link da transmissão
         title: Reunião
         public: Pública
@@ -183,7 +184,9 @@ pt-BR:
         meetings:
           active: Ativas
           all: Todas
+          download_minutes: Baixar ata
           mine: Minhas
+          minutes_not_created: Nenhuma ata de reunião criada
           not_found: Nenhuma reunião encontrada
           participants: Participantes
           title: Reuniões

@@ -49,6 +49,23 @@
         <p><%= @meeting.project.title %></p>
       <% end %>
     </div>
+    <div class="mt-6">
+      <div class="-mt-2 flex flex-auto items-end gap-2">
+        <label><%= Meeting.human_attribute_name('minutes') %></label>
+        <% if policy(@meeting).edit? %>
+          <%= link_to raw('<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>'), app_meeting_edit_minutes_path(@meeting), class: 'open-modal appearance-none flex justify-center', data: { remote: true } %>
+        <% end %>
+      </div>
+      <% if @meeting.minutes.present? %>
+        <div class="mt-2 -ml-2">
+          <%= link_to t('pages.app.pages.meetings.download_minutes'), '#', class: 'button-link' %>
+        </div>
+      <% else %>
+        <p><%= t('pages.app.pages.meetings.minutes_not_created') %></p>
+      <% end %>
+    </div>
   </div>
 </div>
 <%= render 'app/shared/modal' %>

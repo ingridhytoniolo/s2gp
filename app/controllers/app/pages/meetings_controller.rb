@@ -1,7 +1,7 @@
 class App::Pages::MeetingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_active_menu
-  before_action :set_meeting, only: [:destroy, :edit, :show, :update]
+  before_action :set_meeting, only: [:destroy, :edit, :edit_minutes, :show, :update]
   before_action :authorize_meeting
 
   layout 'app'
@@ -57,6 +57,12 @@ class App::Pages::MeetingsController < ApplicationController
       format.js { render layout: false }
     end
   end
+  
+  def edit_minutes
+    respond_to do |format|
+      format.js { render layout: false }
+    end
+  end
 
   def update
     if @meeting.update(meeting_params)
@@ -80,7 +86,7 @@ class App::Pages::MeetingsController < ApplicationController
   end
 
   def meeting_params
-    params.require(:meeting).permit(:date, :description, :location, :project_id, :public, :streaming_url, :title)
+    params.require(:meeting).permit(:date, :description, :location, :minutes, :project_id, :public, :streaming_url, :title)
   end
 
   def set_active_menu
@@ -88,7 +94,7 @@ class App::Pages::MeetingsController < ApplicationController
   end
 
   def set_meeting
-    @meeting = user_meetings.find(params[:id])
+    @meeting = user_meetings.find(params[:id] || params[:meeting_id])
   rescue
     flash[:alert] = t('shared.error')
     redirect_to app_meetings_path

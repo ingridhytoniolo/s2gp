@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     get '/', to: 'pages#index'
     resources :announcements, controller: 'pages/announcements'
     resources :events, controller: 'pages/events'
-    resources :meetings, controller: 'pages/meetings'
+    resources :meetings, controller: 'pages/meetings' do
+      get '/edit_minutes', to: 'pages/meetings#edit_minutes'
+    end
     resources :news, controller: 'pages/news'
     resources :profile, controller: 'pages/profile' do
       get :new_avatar, to: 'pages/profile#new_avatar'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_02_192422) do
+ActiveRecord::Schema.define(version: 2022_05_06_183711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 2022_05_02_192422) do
     t.string "streaming_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "minutes"
     t.index ["profile_id"], name: "index_meetings_on_profile_id"
     t.index ["project_id"], name: "index_meetings_on_project_id"
   end
