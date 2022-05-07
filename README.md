@@ -4,6 +4,20 @@
 
 S2GP is a research group management system.
 
+### Authors
+
+- Michael Wesley Sabino da Silva
+- Renan Marcel Baglioli Nelsen
+
+### Advisor
+
+- Prof. Dr. Luiz Antônio Pereira Neves
+
+### Co-advisors
+
+- Profa. Dra. Caroline Mazetto Mendes
+- Profa. Dra. Jeroniza Nunes Marchaukoski
+
 ## Getting Started with Docker
 
 ### Initial setup
