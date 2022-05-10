@@ -2,7 +2,7 @@
   <div class="w-full max-w-sm">
     <div class="flex-none">
       <a href="<%= root_path %>" class="flex flex-col text-center mb-8">
-        <span class="text-center text-black text-2xl font-semibold"><%= @group[:name] || 'S2GP' %></span>
+        <span class="text-center text-black text-2xl font-semibold"><%= @group[:short_name] %></span>
       </a>
       <h1 class="text-xl font-semibold">
         <%= t('devise.views.registrations.new.title') %><br />
