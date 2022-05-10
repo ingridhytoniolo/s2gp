@@ -3,7 +3,7 @@
   <div id="modal-errors"></div>
   <div class="field">
     <%= f.label :minutes %>
-    <%= f.text_area :minutes, rows: 10, id: 'textarea', required: true %>
+    <%= f.text_area :minutes, rows: 10, required: true %>
   </div>
   <div class="actions">
     <%= f.button t('shared.cancel'), type: :button, class: 'w-full sm:w-1/2', onClick: 'resetModal()',
@@ -15,9 +15,5 @@
 <script type="application/javascript">
   $(document).ready(function() {
     Inputmask().mask(document.querySelectorAll('input'));
-    var editor = new FroalaEditor('#textarea', {
-      height: 300,
-      toolbarButtons: [['undo', 'redo' , 'bold', 'italic', 'underline'], ['insertLink', 'insertImage','insertTable']]
-    });
   });
 </script>

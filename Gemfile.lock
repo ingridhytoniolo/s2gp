@@ -295,8 +295,6 @@ GEM
     wicked_pdf (2.6.2)
       activesupport
     wkhtmltopdf-binary (0.12.6.5)
-    wysiwyg-rails (4.0.11)
-      railties (>= 3.2.7, < 7.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.2)
@@ -335,7 +333,6 @@ DEPENDENCIES
   webpacker (~> 5.0)
   wicked_pdf
   wkhtmltopdf-binary
-  wysiwyg-rails
 
 RUBY VERSION
    ruby 3.0.4p208
