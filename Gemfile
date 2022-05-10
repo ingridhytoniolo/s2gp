@@ -36,6 +36,8 @@ gem 'pry', '~> 0.13.1'
 gem 'pundit'
 gem 'sentry-ruby'
 gem 'sentry-rails'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 gem 'wysiwyg-rails'
 
 group :development, :test do

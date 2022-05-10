@@ -67,7 +67,7 @@ class App::Pages::MeetingsController < ApplicationController
   def minutes
     respond_to do |format|
       format.pdf do
-        render pdf: "minutes"
+        render pdf: 'minutes'
       end
     end
   end

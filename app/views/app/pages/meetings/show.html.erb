@@ -60,7 +60,7 @@
       </div>
       <% if @meeting.minutes.present? %>
         <div class="mt-2 -ml-2">
-          <%= link_to t('pages.app.pages.meetings.download_minutes'), '#', class: 'button-link' %>
+          <%= link_to t('pages.app.pages.meetings.download_minutes'), app_meeting_minutes_path(@meeting, format: 'pdf'), class: 'button-link', target: '_new' %>
         </div>
       <% else %>
         <p><%= t('pages.app.pages.meetings.minutes_not_created') %></p>

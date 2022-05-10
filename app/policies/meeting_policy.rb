@@ -36,4 +36,8 @@ class MeetingPolicy < ApplicationPolicy
   def edit_minutes?
     update?
   end
+
+  def minutes?
+    true
+  end
 end
