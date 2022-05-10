@@ -4,6 +4,7 @@ RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 WORKDIR /s2gp
 COPY Gemfile /s2gp/Gemfile
 COPY Gemfile.lock /s2gp/Gemfile.lock
+RUN gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
 RUN bundle install
 
 # Add Yarn

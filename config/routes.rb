@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :events, controller: 'pages/events'
     resources :meetings, controller: 'pages/meetings' do
       get '/edit_minutes', to: 'pages/meetings#edit_minutes'
+      get '/minutes', to: 'pages/meetings#minutes'
     end
     resources :news, controller: 'pages/news'
     resources :profile, controller: 'pages/profile' do

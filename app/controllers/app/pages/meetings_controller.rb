@@ -1,7 +1,7 @@
 class App::Pages::MeetingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_active_menu
-  before_action :set_meeting, only: [:destroy, :edit, :edit_minutes, :show, :update]
+  before_action :set_meeting, only: [:destroy, :edit, :edit_minutes, :minutes, :show, :update]
   before_action :authorize_meeting
 
   layout 'app'
@@ -61,6 +61,14 @@ class App::Pages::MeetingsController < ApplicationController
   def edit_minutes
     respond_to do |format|
       format.js { render layout: false }
+    end
+  end
+
+  def minutes
+    respond_to do |format|
+      format.pdf do
+        render pdf: "minutes"
+      end
     end
   end
 

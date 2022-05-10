@@ -36,6 +36,7 @@ gem 'pry', '~> 0.13.1'
 gem 'pundit'
 gem 'sentry-ruby'
 gem 'sentry-rails'
+gem 'wysiwyg-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
