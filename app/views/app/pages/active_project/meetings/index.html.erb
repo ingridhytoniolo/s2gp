@@ -3,7 +3,7 @@
   <%= render partial: 'app/pages/active_project/shared/menu', locals: { submenu: 'meetings' } %>
   <div class="w-full mb-4 flex flex-auto justify-end">
     <% if current_user.admin? || @project.researcher?(current_user.profile) %>
-      <%= link_to t('shared.add'), '', class: 'open-modal button-link', remote: true %>
+      <%= link_to t('shared.add'), new_app_meeting_path, class: 'open-modal button-link', remote: true %>
     <% end %>
   </div>
   <div class="max-w-screen-md mx-auto w-full">
