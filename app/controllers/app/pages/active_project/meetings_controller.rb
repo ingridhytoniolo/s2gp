@@ -2,6 +2,6 @@ class App::Pages::ActiveProject::MeetingsController < App::Pages::ActiveProjectC
   layout 'app'
 
   def index
-    @meetings = @project.meetings.order(date: :asc)
+    @meetings = @project.meetings.active.order(date: :asc)
   end
 end

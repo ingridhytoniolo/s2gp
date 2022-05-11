@@ -7,6 +7,6 @@ class Meeting < ApplicationRecord
   validates :title, presence: true
 
   scope :active, -> {
-    where("date >= '#{Time.now}'")
+    where("date >= '#{1.day.ago}'")
   }
 end

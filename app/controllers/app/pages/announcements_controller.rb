@@ -1,7 +1,4 @@
 class App::Pages::AnnouncementsController < ApplicationController
-  # require 'mini_magick'
-  # require 'image_processing/mini_magick'
-
   before_action :authenticate_user!
   before_action :set_active_menu
   before_action :set_announcement, only: [:destroy, :edit, :show, :update]
@@ -62,8 +59,7 @@ class App::Pages::AnnouncementsController < ApplicationController
   end
 
   def update
-    if @announcement.update(announcement_params) #.except(:remove_cover))
-      # remove_cover if announcement_params[:remove_cover] == 'true'
+    if @announcement.update(announcement_params)
 
       flash[:notice] = t('shared.success')
       redirect_to request.referer
@@ -83,10 +79,6 @@ class App::Pages::AnnouncementsController < ApplicationController
       authorize @announcement
     end
   end
-
-  # def remove_cover
-  #   @announcement.cover.delete
-  # end
 
   def set_active_menu
     @active_menu = 'announcement'
